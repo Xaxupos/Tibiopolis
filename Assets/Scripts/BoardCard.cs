@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class BoardCard : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Collectible boundedCollectible;
+    public Transform cardNameTransform;
+    public Transform cardObjectTransform;
+    public Vector2 cardMovePosition;
+    public CardType cardType = CardType.ENEMY;
+    public int cardIndexInBoard = -1;
+
+    private void Awake()
     {
-        
+        cardMovePosition = transform.localPosition;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TriggerCardActions()
     {
-        
+        if (boundedCollectible == null) return;
+
+        boundedCollectible.OnCollect();
+        boundedCollectible = null;
     }
+}
+
+public enum CardType
+{
+    ENEMY,
+    CHANCE,
+    CHEST,
+    JAIL_VISIT,
+    JAIL,
+    PARKING,
+    BULB,
+    WATER,
+    EMPTY
 }

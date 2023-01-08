@@ -14,8 +14,11 @@ public class BoardManager : MonoBehaviour
         if (Instance == null)
             Instance = this;
         else
-            Destroy(this);
+            Destroy(this);  
+    }
 
+    private void Start()
+    {
         SpawnCollectibles();
     }
 

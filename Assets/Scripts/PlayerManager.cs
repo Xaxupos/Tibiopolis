@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager Instance;
     public PlayerMovement playerMovement;
     public CombatStatistics statistics;
+    public PlayerInventory playerInventory;
 
     private void Awake()
     {

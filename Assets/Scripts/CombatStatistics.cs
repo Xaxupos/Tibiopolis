@@ -35,7 +35,12 @@ public class CombatStatistics : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        hpText.DOFade(0f, 0.25f).OnComplete(() => hpText.DOFade(1f, 0.25f).OnComplete(() => hpText.text = $"HP {currentHealth}"));
+        hpText.DOFade(0f, 0.25f).OnComplete(() => { hpText.text = $"HP {currentHealth}"; hpText.DOFade(1f, 0.25f); });
+
+        if (TryGetComponent(out PlayerInventory inventory))
+        {
+            inventory.healthText.DOFade(0f, 0.25f).OnComplete(() => { inventory.healthText.text = $"{currentHealth}/{maxHealth}"; inventory.healthText.DOFade(1f, 0.25f); });
+        }
         
         if (currentHealth <= 0)
         {

@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 2070457797212865102}
   - component: {fileID: -1058572003963364230}
   - component: {fileID: 6255409835999676732}
+  - component: {fileID: 1392951707683889470}
   m_Layer: 0
   m_Name: Monk
   m_TagString: Untagged
@@ -235,6 +236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statistics: {fileID: 6255409835999676732}
+  lootTable: {fileID: 1392951707683889470}
+  enemyRarity: 0
 --- !u!114 &6255409835999676732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +253,30 @@ MonoBehaviour:
   maxHealth: 22
   damage: 14
   hpText: {fileID: 9024000630263067306}
+  currentHealth: 50
+--- !u!114 &1392951707683889470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070457797212865089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf1760f7a250834f8fb448078853a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleItemsDrop:
+  - {fileID: 8614571469882915794, guid: 6194acfc10f62574b9391ff700b7e5d5, type: 3}
+  - {fileID: 6893972084703564291, guid: d6d50e8b5264a4f419c0b1dcd14d1251, type: 3}
+  - {fileID: 6843417833040041150, guid: a9e07a1a6737f6c48a271dfda1d2d0ac, type: 3}
+  - {fileID: 183694927813451138, guid: c040d5ff0161f174eb250c4eb77cac06, type: 3}
+  - {fileID: 132547062319421059, guid: f8a8123721cb3e44588a0d7eadc17208, type: 3}
+  - {fileID: 98309819716893548, guid: a54142e76e1fa0541ab1c78b672f5610, type: 3}
+  - {fileID: 3287870340801741857, guid: a500e794b9d86e846ad71df2e07ae328, type: 3}
+  minGoldDrop: 5
+  maxGoldDrop: 8
+  maxItemsDrop: 1
 --- !u!1 &2070457798386899647
 GameObject:
   m_ObjectHideFlags: 0

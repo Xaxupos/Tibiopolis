@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 6606771669024925925}
   - component: {fileID: 7565627611152640993}
   - component: {fileID: 3493461195983621366}
+  - component: {fileID: 4461176966888380794}
   m_Layer: 0
   m_Name: Wyrm
   m_TagString: Untagged
@@ -235,6 +236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statistics: {fileID: 3493461195983621366}
+  lootTable: {fileID: 4461176966888380794}
+  enemyRarity: 0
 --- !u!114 &3493461195983621366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +253,30 @@ MonoBehaviour:
   maxHealth: 30
   damage: 15
   hpText: {fileID: 7331738978563689728}
+  currentHealth: 50
+--- !u!114 &4461176966888380794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606771669024925930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf1760f7a250834f8fb448078853a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleItemsDrop:
+  - {fileID: 8614571469882915794, guid: 6194acfc10f62574b9391ff700b7e5d5, type: 3}
+  - {fileID: 6893972084703564291, guid: d6d50e8b5264a4f419c0b1dcd14d1251, type: 3}
+  - {fileID: 6843417833040041150, guid: a9e07a1a6737f6c48a271dfda1d2d0ac, type: 3}
+  - {fileID: 183694927813451138, guid: c040d5ff0161f174eb250c4eb77cac06, type: 3}
+  - {fileID: 132547062319421059, guid: f8a8123721cb3e44588a0d7eadc17208, type: 3}
+  - {fileID: 98309819716893548, guid: a54142e76e1fa0541ab1c78b672f5610, type: 3}
+  - {fileID: 3287870340801741857, guid: a500e794b9d86e846ad71df2e07ae328, type: 3}
+  minGoldDrop: 6
+  maxGoldDrop: 12
+  maxItemsDrop: 1
 --- !u!1 &6606771669049617195
 GameObject:
   m_ObjectHideFlags: 0

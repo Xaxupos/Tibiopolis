@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 2100350788579999802}
   - component: {fileID: -399065123605078261}
   - component: {fileID: 1229652427868434685}
+  - component: {fileID: 3842716132015199890}
   m_Layer: 0
   m_Name: Rat
   m_TagString: Untagged
@@ -235,6 +236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statistics: {fileID: 1229652427868434685}
+  lootTable: {fileID: 3842716132015199890}
+  enemyRarity: 0
 --- !u!114 &1229652427868434685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +253,26 @@ MonoBehaviour:
   maxHealth: 10
   damage: 5
   hpText: {fileID: 8697446530003743092}
+  currentHealth: 50
+--- !u!114 &3842716132015199890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100350788579999797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf1760f7a250834f8fb448078853a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleItemsDrop:
+  - {fileID: 98309819716893548, guid: a54142e76e1fa0541ab1c78b672f5610, type: 3}
+  - {fileID: 3287870340801741857, guid: a500e794b9d86e846ad71df2e07ae328, type: 3}
+  - {fileID: 6893972084703564291, guid: d6d50e8b5264a4f419c0b1dcd14d1251, type: 3}
+  minGoldDrop: 1
+  maxGoldDrop: 4
+  maxItemsDrop: 1
 --- !u!1 &2100350789888481483
 GameObject:
   m_ObjectHideFlags: 0

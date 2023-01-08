@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 4084220571544038816}
   - component: {fileID: 8088483946464836773}
   - component: {fileID: 5152249510762451368}
+  - component: {fileID: 8930143247342116013}
   m_Layer: 0
   m_Name: Orc
   m_TagString: Untagged
@@ -337,6 +338,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statistics: {fileID: 5152249510762451368}
+  lootTable: {fileID: 8930143247342116013}
+  enemyRarity: 0
 --- !u!114 &5152249510762451368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +355,27 @@ MonoBehaviour:
   maxHealth: 15
   damage: 7
   hpText: {fileID: 8556909857873300360}
+  currentHealth: 50
+--- !u!114 &8930143247342116013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084220571544038831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf1760f7a250834f8fb448078853a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleItemsDrop:
+  - {fileID: 132547062319421059, guid: f8a8123721cb3e44588a0d7eadc17208, type: 3}
+  - {fileID: 98309819716893548, guid: a54142e76e1fa0541ab1c78b672f5610, type: 3}
+  - {fileID: 183694927813451138, guid: c040d5ff0161f174eb250c4eb77cac06, type: 3}
+  - {fileID: 8614571469882915794, guid: 6194acfc10f62574b9391ff700b7e5d5, type: 3}
+  minGoldDrop: 3
+  maxGoldDrop: 6
+  maxItemsDrop: 1
 --- !u!1 &8250885159810586055
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,11 +44,11 @@ public class BattleManager : MonoBehaviour
 
     private static void SetFightersHP(PlayerManager player, Enemy enemy)
     {
-        player.statistics.hpText.text = "HP: " + player.statistics.currentHealth.ToString();
-        enemy.statistics.hpText.text = "HP: " + enemy.statistics.currentHealth.ToString();
+        player.statistics.healthbar.holder.SetActive(true);
+        enemy.statistics.healthbar.holder.SetActive(true);
 
-        player.statistics.hpText.DOFade(1f, 0.25f);
-        enemy.statistics.hpText.DOFade(1f, 0.25f);
+        enemy.statistics.statsText.gameObject.SetActive(true);
+        enemy.statistics.statsText.text = $"ATK: {enemy.statistics.damage} <br> HP: {enemy.statistics.currentHealth}";
     }
 
     private void MoveFighters(PlayerManager player, Enemy enemy)
@@ -138,14 +138,15 @@ public class BattleManager : MonoBehaviour
             player.playerInventory.goldText.text = $"{player.playerInventory.gold}";
 
             StopAllCoroutines();
-            player.statistics.hpText.DOFade(0f, 0.25f);
+            player.statistics.healthbar.holder.SetActive(false);
             player.transform.DOLocalMove(playerSavedPos, 1f)
                .OnComplete(()=> UIManager.Instance.rollButton.gameObject.SetActive(true));
         }
         else
         {
             StopAllCoroutines();
-            enemy.statistics.hpText.DOFade(0f, 0.25f);
+            enemy.statistics.statsText.gameObject.SetActive(false);
+            enemy.statistics.healthbar.holder.SetActive(false);
             enemy.transform.DOLocalMove(enemySavedPos, 1f);
         }
     }

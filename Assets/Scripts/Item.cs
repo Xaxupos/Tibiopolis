@@ -44,7 +44,7 @@ public class Item : MonoBehaviour
         {
             statistics.maxHealth += stats;
             statistics.currentHealth += stats;
-            PlayerManager.Instance.playerInventory.attackText.text = $"{statistics.currentHealth}/{statistics.maxHealth}";
+            PlayerManager.Instance.playerInventory.healthText.text = $"{statistics.currentHealth}/{statistics.maxHealth}";
         }
     }
 }

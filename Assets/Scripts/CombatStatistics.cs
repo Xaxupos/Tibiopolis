@@ -6,14 +6,26 @@ using DG.Tweening;
 
 public class CombatStatistics : MonoBehaviour
 {
-    public int maxHealth = 50;
-    public int damage = 10;
-    public TMP_Text hpText;
+    public Healthbar healthbar;
+    public TMP_Text statsText;
 
     public int currentHealth = 50;
+    public int maxHealth = 50;
+    public int damage = 10;
+
+    public bool isEnemy = false;
+    public int minDamage = 1;
+    public int maxDamage = 10;
+    public int minHealthRandom = 1;
+    public int maxHealthRandom = 10;
 
     private void Awake()
     {
+        if(isEnemy)
+        {
+            damage = Random.Range(minDamage, maxDamage + 1);
+            maxHealth = Random.Range(minHealthRandom, maxHealthRandom + 1);
+        }
         currentHealth = maxHealth;
     }
 
@@ -22,9 +34,9 @@ public class CombatStatistics : MonoBehaviour
         int rolledDamage = Random.Range(1, damage + 1);
 
         if (playerTurn)
-            rolledDmgText.text = "Player dealing " + rolledDamage.ToString() + " damage";
+            rolledDmgText.text = "Gracz zadaje " + rolledDamage.ToString() + " obra¿eñ!";
         else
-            rolledDmgText.text = "Enemy dealing " + rolledDamage.ToString() + " damage";
+            rolledDmgText.text = "Wróg zadaje " + rolledDamage.ToString() + " obra¿eñ!";
 
         rolledDmgText.DOFade(1f, 0.75f)
             .SetDelay(0.25f)
@@ -35,7 +47,13 @@ public class CombatStatistics : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        hpText.DOFade(0f, 0.25f).OnComplete(() => { hpText.text = $"HP {currentHealth}"; hpText.DOFade(1f, 0.25f); });
+
+        healthbar.UpdateHealthbar(currentHealth, maxHealth);
+
+        if(isEnemy)
+        {
+            statsText.text = $"ATK: {this.damage} <br> HP: {currentHealth}";
+        }
 
         if (TryGetComponent(out PlayerInventory inventory))
         {

@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
+    public GameObject gameOverCanvas;
     public Button rollButton;
     public SpriteRenderer swordsSprite;
     public TMP_Text rolledDmgText;

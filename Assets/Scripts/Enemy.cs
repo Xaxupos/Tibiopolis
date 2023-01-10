@@ -6,6 +6,7 @@ public class Enemy : Collectible
 {
     public CombatStatistics statistics;
     public MonsterLootTable lootTable;
+    public AttackAudio attackAudio;
     public EnemyRarity enemyRarity;
 
     public override void OnCollect()

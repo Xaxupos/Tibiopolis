@@ -30,10 +30,5 @@ public enum CardType
     ENEMY,
     CHANCE,
     CHEST,
-    JAIL_VISIT,
-    JAIL,
-    PARKING,
-    BULB,
-    WATER,
-    EMPTY
+    BARREL
 }

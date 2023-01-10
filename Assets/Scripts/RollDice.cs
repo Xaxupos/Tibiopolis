@@ -7,10 +7,16 @@ using TMPro;
 public class RollDice : MonoBehaviour
 {
     public TMP_Text diceOutputText;
+    public AudioSource rollSound;
+
+    private int move1;
+    private int move2;
 
     public void Roll()
     {
         if (PlayerManager.Instance.playerMovement.isMoving) return;
+        PlayerManager.Instance.playerMovement.isMoving = true;
+        rollSound.Play();
 
         int randomDiceNumber = Random.Range(1, 7);
         diceOutputText.text = randomDiceNumber.ToString();
@@ -20,10 +26,21 @@ public class RollDice : MonoBehaviour
         if(indexToMove >= 40)
         {
             int newIndexToMove = indexToMove - 40;
-            PlayerManager.Instance.playerMovement.Move(newIndexToMove);
+            move1 = newIndexToMove;
+            Invoke("InvokeMove", 0.75f);
             return;
         }
 
-        PlayerManager.Instance.playerMovement.Move(indexToMove);
+        move2 = indexToMove;
+        Invoke("InvokeMove2", 0.75f);
+    }
+
+    public void InvokeMove()
+    {
+        PlayerManager.Instance.playerMovement.Move(move1);
+    }
+    public void InvokeMove2()
+    {
+        PlayerManager.Instance.playerMovement.Move(move2);
     }
 }

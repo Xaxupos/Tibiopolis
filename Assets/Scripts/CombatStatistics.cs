@@ -69,6 +69,11 @@ public class CombatStatistics : MonoBehaviour
 
     public void Die()
     {
+        if (TryGetComponent(out PlayerInventory i))
+        {
+            UIManager.Instance.gameOverCanvas.SetActive(true);
+        }
+
         Destroy(gameObject);
     }
 }

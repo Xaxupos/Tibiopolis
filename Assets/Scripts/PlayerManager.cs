@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour
     public PlayerMovement playerMovement;
     public CombatStatistics statistics;
     public PlayerInventory playerInventory;
+    public AttackAudio attackAudio;
+    public AttackAudio moveAudio;
 
     private void Awake()
     {
@@ -15,5 +17,10 @@ public class PlayerManager : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
+    }
+
+    public void PlayMoveSound()
+    {
+        moveAudio.PlayAttackClip();
     }
 }

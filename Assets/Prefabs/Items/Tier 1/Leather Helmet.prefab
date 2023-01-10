@@ -102,7 +102,7 @@ MonoBehaviour:
   statBoostType: 1
   itemSprite: {fileID: 21300000, guid: 714dc3f9106b1df4ab503d0798405205, type: 3}
   itemName: Leather Helmet
-  dropChance: 0.2
+  dropChance: 0.35
   itemMinStatistics: 1
   itemMaxStatistics: 5
   randomStatistic: 3

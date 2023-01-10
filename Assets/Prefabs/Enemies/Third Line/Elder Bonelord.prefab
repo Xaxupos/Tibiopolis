@@ -115,6 +115,8 @@ GameObject:
   - component: {fileID: 4997966059162122900}
   - component: {fileID: 7123792882560462802}
   - component: {fileID: 2830415380483377104}
+  - component: {fileID: -8739069937800186778}
+  - component: {fileID: -4129035059224230922}
   m_Layer: 0
   m_Name: Elder Bonelord
   m_TagString: Untagged
@@ -204,6 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statistics: {fileID: 7123792882560462802}
   lootTable: {fileID: 2830415380483377104}
+  attackAudio: {fileID: -4129035059224230922}
   enemyRarity: 0
 --- !u!114 &7123792882560462802
 MonoBehaviour:
@@ -250,6 +253,123 @@ MonoBehaviour:
   minGoldDrop: 5
   maxGoldDrop: 8
   maxItemsDrop: 1
+--- !u!82 &-8739069937800186778
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929833028719584431}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &-4129035059224230922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929833028719584431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938de569aa735244897810b02f585b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackClips:
+  - {fileID: 8300000, guid: c93359aa653cd6f47b0079d156489922, type: 3}
+  - {fileID: 8300000, guid: 5581d8117b8df2843b1ba6a0eeb93378, type: 3}
+  - {fileID: 8300000, guid: 4b338e0ebcbbb5a44b0a6527502d0b89, type: 3}
+  - {fileID: 8300000, guid: 2080349ecc72c8d43906d15ccfbe20d0, type: 3}
+  - {fileID: 8300000, guid: 2ef9636cfd81fe540a92017c992b5d31, type: 3}
+  - {fileID: 8300000, guid: ae34473b21d747e4cb912e45ccba0b1e, type: 3}
+  - {fileID: 8300000, guid: 9ad7035c0baa93c4094af72a5bcb1f33, type: 3}
+  source: {fileID: 0}
 --- !u!1 &5093426095931926576
 GameObject:
   m_ObjectHideFlags: 0

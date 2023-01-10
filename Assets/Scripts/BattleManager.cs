@@ -6,6 +6,9 @@ using TMPro;
 
 public class BattleManager : MonoBehaviour
 {
+    public AudioSource battleEngageSound;
+    public AttackAudio dieAudio;
+
     public Transform playerBattlePosition;
     public Transform enemyBattlePosition;
     public Transform lootedItemPosition;
@@ -28,6 +31,7 @@ public class BattleManager : MonoBehaviour
 
     public IEnumerator StartBattle(PlayerManager player, Enemy enemy)
     {
+        battleEngageSound.Play();
         InitialSettings(player, enemy);
 
         MoveFighters(player, enemy);
@@ -69,9 +73,13 @@ public class BattleManager : MonoBehaviour
     {
         player.statistics.Attack(enemy.statistics, UIManager.Instance.rolledDmgText, true);
 
-        yield return new WaitForSeconds(1.6f);
+        yield return new WaitForSeconds(1.0f);
+        player.attackAudio.PlayAttackClip();
+        if(enemy == null)
+            dieAudio.PlayAttackClip();
+        yield return new WaitForSeconds(0.6f);
 
-        if(enemy != null)
+        if (enemy != null)
         {
             StopAllCoroutines();
             StartCoroutine(EnemyTurn(player, enemy));
@@ -86,7 +94,11 @@ public class BattleManager : MonoBehaviour
     {
         enemy.statistics.Attack(player.statistics, UIManager.Instance.rolledDmgText, false);
 
-        yield return new WaitForSeconds(1.6f);
+        yield return new WaitForSeconds(1.0f);
+        enemy.attackAudio.PlayAttackClip();
+        if (player == null)
+            dieAudio.PlayAttackClip();
+        yield return new WaitForSeconds(0.6f);
 
         if (player != null)
         {

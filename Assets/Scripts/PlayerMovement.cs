@@ -11,9 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public int currentLineIndex = 0;
     public bool isMoving = false;
 
-    [ContextMenu("Move")]
     public void Move(int indexToMove)
     {
+        PlayerManager.Instance.PlayMoveSound();
         BoardCard cardToMove;
 
         isMoving = true;

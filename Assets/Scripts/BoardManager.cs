@@ -54,6 +54,10 @@ public class BoardManager : MonoBehaviour
             {
                 SpawnEnemy(card, lines[lineIndex]);
             }
+            else if(card.cardType == CardType.BARREL)
+            {
+                SpawnBarrel(card);
+            }
         }
     }
 
@@ -64,5 +68,13 @@ public class BoardManager : MonoBehaviour
         spawnedEnemy.transform.localPosition = Vector3.zero;
         spawnedEnemy.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
         card.boundedCollectible = spawnedEnemy;
+    }
+
+    private void SpawnBarrel(BoardCard card)
+    {
+        var spawnedBarrel = Instantiate(SpawnManager.Instance.healBarrel, card.transform);
+        spawnedBarrel.transform.localPosition = Vector3.zero;
+        spawnedBarrel.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
+        card.boundedCollectible = spawnedBarrel;
     }
 }

@@ -58,6 +58,10 @@ public class BoardManager : MonoBehaviour
             {
                 SpawnBarrel(card);
             }
+            else if(card.cardType == CardType.CHEST)
+            {
+                SpawnChest(card);
+            }
         }
     }
 
@@ -76,5 +80,13 @@ public class BoardManager : MonoBehaviour
         spawnedBarrel.transform.localPosition = Vector3.zero;
         spawnedBarrel.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
         card.boundedCollectible = spawnedBarrel;
+    }
+
+    private void SpawnChest(BoardCard card)
+    {
+        var spawnedChest = Instantiate(SpawnManager.Instance.goldChest, card.transform);
+        spawnedChest.transform.localPosition = Vector3.zero;
+        spawnedChest.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
+        card.boundedCollectible = spawnedChest;
     }
 }

@@ -14,8 +14,8 @@ public class HealBarrel : Collectible
 
     public override void OnCollect()
     {
-        healCanvas.transform.DOMove(new Vector3(-1, 0, 0), 0.75f);
-        healCanvas.DOFade(1f, 0.75f).OnComplete(()=>healCanvas.DOFade(0f, 0.5f));
+        healCanvas.transform.DOMove(new Vector3(-1.5f, 0, 0), 0.75f);
+        healCanvas.DOFade(1f, 0.75f).OnComplete(()=>healCanvas.DOFade(0f, 0.75f).SetDelay(0.6f));
         Invoke("InvokeAction", 0.4f);
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public Collectible healBarrel = new();
+    public Collectible goldChest = new();
 
     public List<Collectible> firstLineEnemies = new();
     public List<Collectible> secondLineEnemies = new();

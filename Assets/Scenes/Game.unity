@@ -2839,6 +2839,15 @@ MonoBehaviour:
   fourthLineEnemies:
   - {fileID: 7565627611152640993, guid: c2f6a2b706900664783df8b8ac7405f8, type: 3}
   - {fileID: 3830068340156311165, guid: e816b99d81d44144993ac75f6b8c42ac, type: 3}
+  allEnemies:
+  - {fileID: -399065123605078261, guid: 146d079e46aebda40b528ed67b3657cf, type: 3}
+  - {fileID: 2615791695565183884, guid: f82059c3f719b3242a8adc437a49c82e, type: 3}
+  - {fileID: 8088483946464836773, guid: 5ed42ba379c42224680011e7de3e80e4, type: 3}
+  - {fileID: 1417906734725514018, guid: a22e40221f9d4ae4daf5b597076f0c9e, type: 3}
+  - {fileID: 3830068340156311165, guid: e816b99d81d44144993ac75f6b8c42ac, type: 3}
+  - {fileID: 7565627611152640993, guid: c2f6a2b706900664783df8b8ac7405f8, type: 3}
+  - {fileID: -1058572003963364230, guid: ca09222439d33474f846137b3e9d0345, type: 3}
+  - {fileID: 4997966059162122900, guid: f5e4a060bfc05e64b8550e4ff5e04cc7, type: 3}
 --- !u!4 &1531835009
 Transform:
   m_ObjectHideFlags: 0
@@ -3465,6 +3474,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960418824}
   m_CullTransparentMesh: 1
+--- !u!1 &1966926582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1966926584}
+  - component: {fileID: 1966926583}
+  m_Layer: 0
+  m_Name: Save Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1966926583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966926582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd3c40aea5581f4ebbd8fa0e961eb23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1966926584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966926582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1994980080
 GameObject:
   m_ObjectHideFlags: 0

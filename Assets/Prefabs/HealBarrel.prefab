@@ -314,6 +314,7 @@ MonoBehaviour:
   maxHealAmount: 20
   healAmount: 0
   healCanvas: {fileID: 7253633901448679579}
+  healValueText: {fileID: 2977752193574789354}
 --- !u!1 &7253633901448679578
 GameObject:
   m_ObjectHideFlags: 0

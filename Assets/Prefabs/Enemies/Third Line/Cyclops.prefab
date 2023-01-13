@@ -239,10 +239,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18718a9a7c34b84fb48cb53471f9ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  assignedBoardCard: {fileID: 0}
   statistics: {fileID: 6255409835999676732}
   lootTable: {fileID: 1392951707683889470}
   attackAudio: {fileID: -4394479530639142675}
-  enemyRarity: 0
+  monsterType: 4
 --- !u!114 &6255409835999676732
 MonoBehaviour:
   m_ObjectHideFlags: 0

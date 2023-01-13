@@ -12,6 +12,8 @@ public class SpawnManager : MonoBehaviour
     public List<Collectible> thirdLineEnemies = new();
     public List<Collectible> fourthLineEnemies = new();
 
+    public List<Enemy> allEnemies = new List<Enemy>();
+
     public static SpawnManager Instance;
 
     private void Awake()

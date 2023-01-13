@@ -505,3 +505,4 @@ MonoBehaviour:
   maxGoldAmount: 25
   goldAmount: 0
   goldCanvas: {fileID: 3757686197475065909}
+  goldValueText: {fileID: 8781166042758901828}

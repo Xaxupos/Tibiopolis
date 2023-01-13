@@ -5,6 +5,8 @@ using TMPro;
 
 public class PlayerInventory : MonoBehaviour
 {
+    public TMP_Text nickText;
+
     [Header("Slots")]
     public InventorySlot headSlot;
     public InventorySlot chestSlot;
@@ -31,5 +33,7 @@ public class PlayerInventory : MonoBehaviour
         equipment.Add(ItemType.LEGS, legsSlot);
         equipment.Add(ItemType.BOOTS, bootsSlot);
         equipment.Add(ItemType.RING, ringSlot);
+
+        nickText.text = PlayerPrefs.GetString($"_ProfileName{ProfileManager.Instance.currentProfile}");
     }
 }

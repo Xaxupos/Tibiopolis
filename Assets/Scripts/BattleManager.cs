@@ -29,7 +29,7 @@ public class BattleManager : MonoBehaviour
             Destroy(this);
     }
 
-    public IEnumerator StartBattle(PlayerManager player, Enemy enemy)
+    public IEnumerator StartBattle(PlayerManager player, Enemy enemy, BoardCard card)
     {
         battleEngageSound.Play();
         InitialSettings(player, enemy);
@@ -43,7 +43,7 @@ public class BattleManager : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
 
         StopAllCoroutines();
-        StartCoroutine(PlayerTurn(player, enemy));
+        StartCoroutine(PlayerTurn(player, enemy, card));
     }
 
     private static void SetFightersHP(PlayerManager player, Enemy enemy)
@@ -69,7 +69,7 @@ public class BattleManager : MonoBehaviour
         enemySavedPos = enemy.transform.localPosition;
     }
 
-    public IEnumerator PlayerTurn(PlayerManager player, Enemy enemy)
+    public IEnumerator PlayerTurn(PlayerManager player, Enemy enemy, BoardCard card)
     {
         player.statistics.Attack(enemy.statistics, UIManager.Instance.rolledDmgText, true);
 
@@ -82,15 +82,15 @@ public class BattleManager : MonoBehaviour
         if (enemy != null)
         {
             StopAllCoroutines();
-            StartCoroutine(EnemyTurn(player, enemy));
+            StartCoroutine(EnemyTurn(player, enemy, card));
         }
         else
         {
-            FinishBattle(true, player, enemy);
+            FinishBattle(true, player, enemy, card);
         }
     }
 
-    public IEnumerator EnemyTurn(PlayerManager player, Enemy enemy)
+    public IEnumerator EnemyTurn(PlayerManager player, Enemy enemy, BoardCard card)
     {
         enemy.statistics.Attack(player.statistics, UIManager.Instance.rolledDmgText, false);
 
@@ -103,15 +103,15 @@ public class BattleManager : MonoBehaviour
         if (player != null)
         {
             StopAllCoroutines();
-            StartCoroutine(PlayerTurn(player, enemy));
+            StartCoroutine(PlayerTurn(player, enemy, card));
         }
         else
         {
-            FinishBattle(false, player, enemy);
+            FinishBattle(false, player, enemy, card);
         }
     }
 
-    public void FinishBattle(bool win, PlayerManager player, Enemy enemy)
+    public void FinishBattle(bool win, PlayerManager player, Enemy enemy, BoardCard battleCard)
     {
         UIManager.Instance.EndBattle();
         if(win)
@@ -153,6 +153,15 @@ public class BattleManager : MonoBehaviour
             player.statistics.healthbar.holder.SetActive(false);
             player.transform.DOLocalMove(playerSavedPos, 1f)
                .OnComplete(()=> UIManager.Instance.rollButton.gameObject.SetActive(true));
+
+            BoardManager.Instance.savedMonsterOnBoard.Remove(battleCard.cardIndexInBoard);
+
+            if(PlayerPrefs.HasKey($"_Enemy{battleCard.cardIndexInBoard}Board{ProfileManager.Instance.currentProfile}"))
+            {
+                PlayerPrefs.DeleteKey($"_Enemy{battleCard.cardIndexInBoard}Board{ProfileManager.Instance.currentProfile}");
+            }
+
+            SaveManager.Instance.SaveProfile();
         }
         else
         {
@@ -160,6 +169,7 @@ public class BattleManager : MonoBehaviour
             enemy.statistics.statsText.gameObject.SetActive(false);
             enemy.statistics.healthbar.holder.SetActive(false);
             enemy.transform.DOLocalMove(enemySavedPos, 1f);
+            SaveManager.Instance.DeleteAll();
         }
     }
 }

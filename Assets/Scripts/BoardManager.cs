@@ -8,18 +8,13 @@ public class BoardManager : MonoBehaviour
     public static BoardManager Instance;
 
     public List<BoardCard> allBoardCards = new();
-
+    public Dictionary<int, MonsterType> savedMonsterOnBoard = new Dictionary<int, MonsterType>(); 
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
         else
             Destroy(this);  
-    }
-
-    private void Start()
-    {
-        SpawnCollectibles();
     }
 
     public void RotateBoard()
@@ -37,8 +32,11 @@ public class BoardManager : MonoBehaviour
         ), 0.5f);
     }
 
-    private void SpawnCollectibles()
+    public void SpawnCollectibles()
     {
+        bool spawnEnemies = true;
+        if (savedMonsterOnBoard.Count > 0) spawnEnemies = false;
+
         foreach (var card in allBoardCards)
         {
             int lineIndex = (card.cardIndexInBoard - 1) / 10;
@@ -52,7 +50,11 @@ public class BoardManager : MonoBehaviour
 
             if (card.cardType == CardType.ENEMY)
             {
-                SpawnEnemy(card, lines[lineIndex]);
+                if(spawnEnemies)
+                {
+                    SpawnEnemy(card, lines[lineIndex]);
+                    Debug.Log("Spawning not saved enemy!");
+                }
             }
             else if(card.cardType == CardType.BARREL)
             {
@@ -72,6 +74,20 @@ public class BoardManager : MonoBehaviour
         spawnedEnemy.transform.localPosition = Vector3.zero;
         spawnedEnemy.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
         card.boundedCollectible = spawnedEnemy;
+
+        spawnedEnemy.GetComponent<Enemy>().assignedBoardCard = card;
+        savedMonsterOnBoard.Add(card.cardIndexInBoard, spawnedEnemy.GetComponent<Enemy>().monsterType);
+    }
+
+    public void SpawnLoadedEnemy(Collectible enemy, BoardCard card)
+    {
+        var spawnedEnemy = Instantiate(enemy, card.transform);
+        spawnedEnemy.transform.localPosition = Vector3.zero;
+        spawnedEnemy.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
+        card.boundedCollectible = spawnedEnemy;
+
+        spawnedEnemy.GetComponent<Enemy>().assignedBoardCard = card;
+        savedMonsterOnBoard.Add(card.cardIndexInBoard, spawnedEnemy.GetComponent<Enemy>().monsterType);
     }
 
     private void SpawnBarrel(BoardCard card)

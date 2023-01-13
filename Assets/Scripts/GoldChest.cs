@@ -10,21 +10,30 @@ public class GoldChest : Collectible
     public int maxGoldAmount = 25;
     public int goldAmount = 0;
     public CanvasGroup goldCanvas;
+    public TMPro.TMP_Text goldValueText;
+
+    private Vector2 localPos;
 
     public override void OnCollect()
     {
+        localPos = goldCanvas.transform.localPosition;
+
+        goldAmount = Random.Range(minGoldAmount, maxGoldAmount + 1);
+        goldValueText.text = $"{goldAmount}";
+
         goldCanvas.transform.DOMove(new Vector3(-1.5f, 0, 0), 0.75f);
-        goldCanvas.DOFade(1f, 0.75f).OnComplete(() => goldCanvas.DOFade(0f, 0.75f).SetDelay(0.6f));
+        goldCanvas.DOFade(1f, 0.75f).OnComplete(() => { goldCanvas.DOFade(0f, 0.75f).SetDelay(0.6f).OnComplete(()=> goldCanvas.transform.localPosition = localPos); });
+
         Invoke("InvokeAction", 0.4f);
     }
 
     public void InvokeAction()
     {
-        goldAmount = Random.Range(minGoldAmount, maxGoldAmount + 1);
+        goldSound.Play();
 
         PlayerManager.Instance.playerInventory.gold += goldAmount;
-
-        goldSound.Play();
         PlayerManager.Instance.playerInventory.goldText.text = $"{PlayerManager.Instance.playerInventory.gold}";
+
+        SaveManager.Instance.SaveProfile();
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    public GameObject playerPrefab;
+
     public Collectible healBarrel = new();
     public Collectible goldChest = new();
 

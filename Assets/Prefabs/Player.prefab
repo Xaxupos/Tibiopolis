@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.59607846}
+  m_Color: {r: 0.01886791, g: 0.017532917, b: 0.017879521, a: 0.6901961}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1408,7 +1408,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 3d153cc73dd260a428c3dc18729b7484, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1488,6 +1488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e449d2d199b47b8409be9b556c2f73e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nickText: {fileID: 147386005}
   headSlot: {fileID: 1048869638}
   chestSlot: {fileID: 305751509161932130}
   weaponSlot: {fileID: 305751509050141869}

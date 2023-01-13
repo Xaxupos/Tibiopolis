@@ -26,6 +26,14 @@ public class Item : MonoBehaviour
         if(slot.equippedItem != null)
             if (stats <= slot.equippedItem.randomStatistic) return;
 
+        if(slot.equippedItem != null)
+        {
+            if (statBoostType == StatBoostType.ATTACK)
+                statistics.damage -= slot.equippedItem.randomStatistic;
+            else if (statBoostType == StatBoostType.HEALTH)
+                statistics.maxHealth -= slot.equippedItem.randomStatistic;
+        }
+
         slot.equippedItem = this;
         slot.slotItemImage.sprite = itemSprite;
         slot.slotItemImage.gameObject.SetActive(true);
@@ -44,6 +52,10 @@ public class Item : MonoBehaviour
         {
             statistics.maxHealth += stats;
             statistics.currentHealth += stats;
+
+            if (statistics.currentHealth > statistics.maxHealth) statistics.currentHealth = statistics.maxHealth;
+            if (statistics.maxHealth < statistics.currentHealth) statistics.maxHealth = statistics.currentHealth;
+
             PlayerManager.Instance.playerInventory.healthText.text = $"{statistics.currentHealth}/{statistics.maxHealth}";
         }
     }

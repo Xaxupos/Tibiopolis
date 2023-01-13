@@ -32,10 +32,16 @@ public class SaveManager : MonoBehaviour
 
         //Enemies on board
         SaveEnemiesOnBoard();
+
+        //Player on board
+        SavePlayerOnBoard();
     }
 
     public void LoadExistingProfile()
     {
+        //Player on board
+        LoadPlayerOnBoard();
+
         //Inventory
         LoadGold();
         LoadHP();
@@ -75,6 +81,18 @@ public class SaveManager : MonoBehaviour
 
         PlayerPrefs.SetInt(key, value);
     }
+    public void SaveEnemiesOnBoard()
+    {
+        foreach(var entry in BoardManager.Instance.savedMonsterOnBoard)
+        {
+            PlayerPrefs.SetInt($"_Enemy{entry.Key}Board{ProfileManager.Instance.currentProfile}", (int)entry.Value);
+        }
+    }
+    public void SavePlayerOnBoard()
+    {
+        PlayerPrefs.SetInt($"_PlayerBoardPos{ProfileManager.Instance.currentProfile}", PlayerManager.Instance.playerMovement.currentCardIndex);
+        PlayerPrefs.SetInt($"_PlayerBoardRotation{ProfileManager.Instance.currentProfile}", PlayerManager.Instance.playerMovement.currentLineIndex);
+    }
     public void LoadGold()
     {
         int gold = PlayerPrefs.GetInt($"_Gold{ProfileManager.Instance.currentProfile}");
@@ -90,19 +108,13 @@ public class SaveManager : MonoBehaviour
         PlayerManager.Instance.statistics.maxHealth = maxHP;
 
         PlayerManager.Instance.playerInventory.healthText.text = $"{PlayerManager.Instance.statistics.currentHealth}/{PlayerManager.Instance.statistics.maxHealth}";
+        PlayerManager.Instance.statistics.healthbar.UpdateHealthbar(PlayerManager.Instance.statistics.currentHealth, PlayerManager.Instance.statistics.maxHealth);
     }
     public void LoadATK()
     {
         int atk = PlayerPrefs.GetInt($"_ATK{ProfileManager.Instance.currentProfile}");
         PlayerManager.Instance.playerInventory.attackText.text = atk.ToString();
         PlayerManager.Instance.statistics.damage = atk;
-    }
-    public void SaveEnemiesOnBoard()
-    {
-        foreach(var entry in BoardManager.Instance.savedMonsterOnBoard)
-        {
-            PlayerPrefs.SetInt($"_Enemy{entry.Key}Board{ProfileManager.Instance.currentProfile}", (int)entry.Value);
-        }
     }
     public void LoadEnemiesOnBoard()
     {
@@ -121,6 +133,28 @@ public class SaveManager : MonoBehaviour
                 }
             }
         }
+    }
+    public void LoadPlayerOnBoard()
+    {
+        var cardIndex = PlayerPrefs.GetInt($"_PlayerBoardPos{ProfileManager.Instance.currentProfile}");
+        var player = Instantiate(SpawnManager.Instance.playerPrefab, BoardManager.Instance.transform);
+        player.transform.localPosition = BoardManager.Instance.allBoardCards[cardIndex].cardMovePosition;
+
+        int lineIndex = (BoardManager.Instance.allBoardCards[cardIndex].cardIndexInBoard - 1) / 10;
+        PlayerManager.Instance.playerMovement.currentLineIndex = lineIndex;
+        PlayerManager.Instance.playerMovement.currentCardIndex = cardIndex;
+
+        PlayerManager.Instance.transform.localEulerAngles = new Vector3(
+            PlayerManager.Instance.transform.localEulerAngles.x,
+            PlayerManager.Instance.transform.localEulerAngles.y,
+            PlayerManager.Instance.transform.localEulerAngles.z + (-90 * PlayerPrefs.GetInt($"_PlayerBoardRotation{ProfileManager.Instance.currentProfile}", PlayerManager.Instance.playerMovement.currentLineIndex))
+            ); ;
+
+        BoardManager.Instance.transform.localEulerAngles = new Vector3(
+            BoardManager.Instance.transform.localEulerAngles.x,
+            BoardManager.Instance.transform.localEulerAngles.y,
+            BoardManager.Instance.transform.localEulerAngles.z + (90 * PlayerPrefs.GetInt($"_PlayerBoardRotation{ProfileManager.Instance.currentProfile}", PlayerManager.Instance.playerMovement.currentLineIndex))
+            ); ;
     }
     public void DeleteAll()
     {

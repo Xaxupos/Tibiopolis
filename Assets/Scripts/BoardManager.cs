@@ -7,6 +7,7 @@ public class BoardManager : MonoBehaviour
 {
     public static BoardManager Instance;
 
+
     public List<BoardCard> allBoardCards = new();
     public Dictionary<int, MonsterType> savedMonsterOnBoard = new Dictionary<int, MonsterType>(); 
     private void Awake()
@@ -64,6 +65,12 @@ public class BoardManager : MonoBehaviour
             {
                 SpawnChest(card);
             }
+        }
+
+        if(!PlayerPrefs.HasKey($"_PlayerBoardPos{ProfileManager.Instance.currentProfile}"))
+        {
+            var player = Instantiate(SpawnManager.Instance.playerPrefab, transform);
+            player.transform.localPosition = new Vector2(3.5f, -3.5f);
         }
     }
 

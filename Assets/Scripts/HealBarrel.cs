@@ -33,7 +33,7 @@ public class HealBarrel : Collectible
 
         healSound.Play();
         PlayerManager.Instance.playerInventory.healthText.text = $"{PlayerManager.Instance.statistics.currentHealth}/{PlayerManager.Instance.statistics.maxHealth}";
-
+        PlayerManager.Instance.statistics.healthbar.UpdateHealthbar(PlayerManager.Instance.statistics.currentHealth, PlayerManager.Instance.statistics.maxHealth);
         SaveManager.Instance.SaveProfile();
     }
 }

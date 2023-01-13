@@ -20,6 +20,7 @@ public class BoardCard : MonoBehaviour
     {
         if (boundedCollectible == null) return;
 
+        SaveManager.Instance.SavePlayerOnBoard();
         boundedCollectible.OnCollect();
         boundedCollectible = null;
     }

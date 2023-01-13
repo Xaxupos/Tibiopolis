@@ -8,6 +8,7 @@ public class BattleManager : MonoBehaviour
 {
     public AudioSource battleEngageSound;
     public AttackAudio dieAudio;
+    public AudioSource goldLootAudio;
 
     public Transform playerBattlePosition;
     public Transform enemyBattlePosition;
@@ -120,6 +121,7 @@ public class BattleManager : MonoBehaviour
 
             var gold = Instantiate(goldPrefab, goldItemPosition.position, Quaternion.identity);
             gold.GetComponent<SpriteRenderer>().DOFade(1f, 1.5f).OnComplete(() => gold.GetComponent<SpriteRenderer>().DOFade(0f, 1f).SetDelay(0.6f));
+            goldLootAudio.Play();
 
             UIManager.Instance.goldLootText.text = $"{possibleGold}";
             UIManager.Instance.goldLootText.DOFade(1f, 1.5f).OnComplete(()=> UIManager.Instance.goldLootText.DOFade(0f, 1f).SetDelay(0.6f));

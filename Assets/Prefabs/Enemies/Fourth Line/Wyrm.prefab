@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbar: {fileID: 198147924193370798}
   statsText: {fileID: 7227957582258399956}
+  isPlayer: 0
   currentHealth: 50
   maxHealth: 30
   damage: 15
@@ -142,13 +143,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleItemsDrop:
-  - {fileID: 8614571469882915794, guid: 6194acfc10f62574b9391ff700b7e5d5, type: 3}
-  - {fileID: 6893972084703564291, guid: d6d50e8b5264a4f419c0b1dcd14d1251, type: 3}
-  - {fileID: 6843417833040041150, guid: a9e07a1a6737f6c48a271dfda1d2d0ac, type: 3}
-  - {fileID: 183694927813451138, guid: c040d5ff0161f174eb250c4eb77cac06, type: 3}
-  - {fileID: 132547062319421059, guid: f8a8123721cb3e44588a0d7eadc17208, type: 3}
-  - {fileID: 98309819716893548, guid: a54142e76e1fa0541ab1c78b672f5610, type: 3}
-  - {fileID: 3287870340801741857, guid: a500e794b9d86e846ad71df2e07ae328, type: 3}
+  - {fileID: 5391143696182289436, guid: 49403c7916a42894ab0cee5919dd314b, type: 3}
+  - {fileID: 8574268796941324596, guid: d81961faac3ec6942a8d97b9adc95240, type: 3}
+  - {fileID: 9037699140683571122, guid: 7077375851d44f249b937b3382283e8d, type: 3}
+  - {fileID: 5482772233142030343, guid: 0a1d8026a2a673a4cbc3b9807e99b70c, type: 3}
+  - {fileID: 8121252907769182204, guid: 6633527da25bd5641a4f559c95bb2320, type: 3}
+  - {fileID: 1457571849049815511, guid: 6eb461da42e969a44a418d6394a920c3, type: 3}
+  - {fileID: 40255460025841726, guid: 8b0336770bd6fbb49ba1ac5214972d42, type: 3}
   minGoldDrop: 6
   maxGoldDrop: 12
   maxItemsDrop: 1

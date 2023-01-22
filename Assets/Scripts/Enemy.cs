@@ -33,5 +33,10 @@ public enum MonsterType
     CYCLOPS,
     BONELORD,
     WYRM,
-    DRAGON
+    DRAGON,
+    MINOTAUR,
+    DEMON,
+    EFREET,
+    WOODLING,
+    SCARAB
 }

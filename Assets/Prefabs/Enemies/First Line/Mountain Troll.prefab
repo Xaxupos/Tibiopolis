@@ -223,6 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbar: {fileID: 4434165981845492687}
   statsText: {fileID: 7950163467598932622}
+  isPlayer: 0
   currentHealth: 50
   maxHealth: 10
   damage: 5
@@ -244,9 +245,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleItemsDrop:
+  - {fileID: 6843417833040041150, guid: a9e07a1a6737f6c48a271dfda1d2d0ac, type: 3}
+  - {fileID: 6893972084703564291, guid: d6d50e8b5264a4f419c0b1dcd14d1251, type: 3}
+  - {fileID: 183694927813451138, guid: c040d5ff0161f174eb250c4eb77cac06, type: 3}
+  - {fileID: 132547062319421059, guid: f8a8123721cb3e44588a0d7eadc17208, type: 3}
+  - {fileID: 8614571469882915794, guid: 6194acfc10f62574b9391ff700b7e5d5, type: 3}
   - {fileID: 98309819716893548, guid: a54142e76e1fa0541ab1c78b672f5610, type: 3}
   - {fileID: 3287870340801741857, guid: a500e794b9d86e846ad71df2e07ae328, type: 3}
-  - {fileID: 6893972084703564291, guid: d6d50e8b5264a4f419c0b1dcd14d1251, type: 3}
+  - {fileID: 5125194306341392997, guid: 05fe1b3ca856bcb4d9856d3ffd559c20, type: 3}
   minGoldDrop: 1
   maxGoldDrop: 4
   maxItemsDrop: 1

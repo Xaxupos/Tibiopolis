@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System.Linq;
 
 public class BoardManager : MonoBehaviour
 {
@@ -86,8 +87,24 @@ public class BoardManager : MonoBehaviour
         spawnedEnemy.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
         card.boundedCollectible = spawnedEnemy;
 
+        Shuffle(spawnedEnemy.GetComponent<Enemy>().lootTable.possibleItemsDrop);
+
         spawnedEnemy.GetComponent<Enemy>().assignedBoardCard = card;
         savedMonsterOnBoard.Add(card.cardIndexInBoard, spawnedEnemy.GetComponent<Enemy>().monsterType);
+    }
+
+
+    void Shuffle(List<Item> list)
+    {
+        int n = list.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = UnityEngine.Random.Range(0, n + 1);
+            Item value = list[k];
+            list[k] = list[n];
+            list[n] = value;
+        }
     }
 
     public void SpawnLoadedEnemy(Collectible enemy, BoardCard card)

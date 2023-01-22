@@ -102,10 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18718a9a7c34b84fb48cb53471f9ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  assignedBoardCard: {fileID: 0}
   statistics: {fileID: 1229652427868434685}
   lootTable: {fileID: 3842716132015199890}
   attackAudio: {fileID: 7127425879803518262}
-  enemyRarity: 0
+  monsterType: 0
 --- !u!114 &1229652427868434685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbar: {fileID: 1328679396204138271}
   statsText: {fileID: 18432323224443073}
+  isPlayer: 0
   currentHealth: 50
   maxHealth: 10
   damage: 5
@@ -141,9 +143,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleItemsDrop:
+  - {fileID: 6843417833040041150, guid: a9e07a1a6737f6c48a271dfda1d2d0ac, type: 3}
+  - {fileID: 6893972084703564291, guid: d6d50e8b5264a4f419c0b1dcd14d1251, type: 3}
+  - {fileID: 183694927813451138, guid: c040d5ff0161f174eb250c4eb77cac06, type: 3}
+  - {fileID: 132547062319421059, guid: f8a8123721cb3e44588a0d7eadc17208, type: 3}
+  - {fileID: 8614571469882915794, guid: 6194acfc10f62574b9391ff700b7e5d5, type: 3}
   - {fileID: 98309819716893548, guid: a54142e76e1fa0541ab1c78b672f5610, type: 3}
   - {fileID: 3287870340801741857, guid: a500e794b9d86e846ad71df2e07ae328, type: 3}
-  - {fileID: 6893972084703564291, guid: d6d50e8b5264a4f419c0b1dcd14d1251, type: 3}
   minGoldDrop: 1
   maxGoldDrop: 4
   maxItemsDrop: 1

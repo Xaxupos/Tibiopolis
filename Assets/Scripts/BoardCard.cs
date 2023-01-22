@@ -31,5 +31,6 @@ public enum CardType
     ENEMY,
     CHANCE,
     CHEST,
-    BARREL
+    BARREL,
+    START
 }

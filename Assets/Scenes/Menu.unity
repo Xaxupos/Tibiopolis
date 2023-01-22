@@ -1061,6 +1061,7 @@ GameObject:
   - component: {fileID: 657525540}
   - component: {fileID: 657525539}
   - component: {fileID: 657525538}
+  - component: {fileID: 657525541}
   m_Layer: 5
   m_Name: Kontynnuuj
   m_TagString: Untagged
@@ -1145,8 +1146,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1420056814}
-        m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
+      - m_Target: {fileID: 657525541}
+        m_TargetAssemblyTypeName: GetProfileManager, Assembly-CSharp
         m_MethodName: LoadProfile
         m_Mode: 1
         m_Arguments:
@@ -1195,6 +1196,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657525536}
   m_CullTransparentMesh: 1
+--- !u!114 &657525541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657525536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21cc71ea4891bad4d89a254b9c2b5ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &740481915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2816,6 +2829,7 @@ GameObject:
   - component: {fileID: 1484638748}
   - component: {fileID: 1484638747}
   - component: {fileID: 1484638746}
+  - component: {fileID: 1484638749}
   m_Layer: 5
   m_Name: Kontynnuuj
   m_TagString: Untagged
@@ -2900,9 +2914,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1420056814}
-        m_TargetAssemblyTypeName: ProfileManager, Assembly-CSharp
-        m_MethodName: CreateProfile
+      - m_Target: {fileID: 1484638749}
+        m_TargetAssemblyTypeName: GetProfileManager, Assembly-CSharp
+        m_MethodName: NewProfiel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2950,6 +2964,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484638744}
   m_CullTransparentMesh: 1
+--- !u!114 &1484638749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484638744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21cc71ea4891bad4d89a254b9c2b5ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1546540554
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class SpawnManager : MonoBehaviour
 
     public Collectible healBarrel = new();
     public Collectible goldChest = new();
+    public Collectible startCard = new();
 
     public List<Collectible> firstLineEnemies = new();
     public List<Collectible> secondLineEnemies = new();

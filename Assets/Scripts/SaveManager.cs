@@ -162,5 +162,6 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.DeleteKey($"_CurrentHP{ProfileManager.Instance.currentProfile}");
         PlayerPrefs.DeleteKey($"_MaxHP{ProfileManager.Instance.currentProfile}");
         PlayerPrefs.DeleteKey($"_ATK{ProfileManager.Instance.currentProfile}");
+        ProfileManager.Instance.DeleteProfile();
     }
 }

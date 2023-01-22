@@ -171,7 +171,7 @@ public class BattleManager : MonoBehaviour
             enemy.statistics.statsText.gameObject.SetActive(false);
             enemy.statistics.healthbar.holder.SetActive(false);
             enemy.transform.DOLocalMove(enemySavedPos, 1f);
-            SaveManager.Instance.DeleteAll();
+            SaveManager.Instance.DeleteProfile();
         }
     }
 }

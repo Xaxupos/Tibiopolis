@@ -38,4 +38,12 @@ public class ProfileManager : MonoBehaviour
 
         SceneManager.LoadScene("Game");
     }
+
+    public void DeleteProfile()
+    {
+        if(PlayerPrefs.HasKey($"_ProfileName{currentProfile}"))
+        {
+            PlayerPrefs.DeleteKey($"_ProfileName{currentProfile}");
+        }
+    }
 }

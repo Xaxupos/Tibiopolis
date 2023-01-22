@@ -65,6 +65,10 @@ public class BoardManager : MonoBehaviour
             {
                 SpawnChest(card);
             }
+            else if (card.cardType == CardType.START)
+            {
+                SpawnStart(card);
+            }
         }
 
         if(!PlayerPrefs.HasKey($"_PlayerBoardPos{ProfileManager.Instance.currentProfile}"))
@@ -111,5 +115,13 @@ public class BoardManager : MonoBehaviour
         spawnedChest.transform.localPosition = Vector3.zero;
         spawnedChest.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
         card.boundedCollectible = spawnedChest;
+    }
+
+    private void SpawnStart(BoardCard card)
+    {
+        var spawnedStart = Instantiate(SpawnManager.Instance.startCard, card.transform);
+        spawnedStart.transform.localPosition = Vector3.zero;
+        spawnedStart.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
+        card.boundedCollectible = spawnedStart;
     }
 }

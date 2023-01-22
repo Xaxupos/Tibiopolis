@@ -98,11 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 3
-  itemDesc: 
   statBoostType: 1
   itemSprite: {fileID: 21300000, guid: 49d980bc1eddb824a80f2b1e07e1ac90, type: 3}
   itemName: Leather Boots
   dropChance: 0.35
-  itemMinStatistics: 1
-  itemMaxStatistics: 4
-  randomStatistic: 4
+  indexInDatabase: 1
+  itemStats: 2

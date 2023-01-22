@@ -103,6 +103,4 @@ MonoBehaviour:
   itemSprite: {fileID: 21300000, guid: 4f79f54e1ed31e143ab3cd3ba6828006, type: 3}
   itemName: Leather Armor
   dropChance: 0.35
-  itemMinStatistics: 2
-  itemMaxStatistics: 7
-  randomStatistic: 2
+  itemStats: 5

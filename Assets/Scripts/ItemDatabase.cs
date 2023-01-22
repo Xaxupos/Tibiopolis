@@ -26,4 +26,15 @@ public class ItemDatabase : MonoBehaviour
 
         return null;
     }
+
+    public Item GetItemByIndex(int index)
+    {
+        foreach(var item in items)
+        {
+            if (item.indexInDatabase == index)
+                return item;
+        }
+
+        return null;
+    }
 }

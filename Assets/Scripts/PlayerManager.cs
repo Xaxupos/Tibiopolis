@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
+
+    public GameObject inventoryCanvas;
     public PlayerMovement playerMovement;
     public CombatStatistics statistics;
     public PlayerInventory playerInventory;
@@ -17,6 +19,11 @@ public class PlayerManager : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
+    }
+
+    private void Start()
+    {
+        inventoryCanvas.transform.SetParent(null);
     }
 
     public void PlayMoveSound()

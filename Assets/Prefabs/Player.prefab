@@ -1432,6 +1432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed70cde5917d583439d8869f0e6accee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryCanvas: {fileID: 1412578864}
   playerMovement: {fileID: 4308157366503436673}
   statistics: {fileID: 6271578604414079557}
   playerInventory: {fileID: -6852908027013281818}
@@ -1468,6 +1469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbar: {fileID: 9119717794210490870}
   statsText: {fileID: 0}
+  isPlayer: 1
   currentHealth: 50
   maxHealth: 50
   damage: 10

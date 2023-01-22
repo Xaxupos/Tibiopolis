@@ -9,6 +9,7 @@ public class CombatStatistics : MonoBehaviour
     public Healthbar healthbar;
     public TMP_Text statsText;
 
+    public bool isPlayer = false;
     public int currentHealth = 50;
     public int maxHealth = 50;
     public int damage = 10;
@@ -74,6 +75,12 @@ public class CombatStatistics : MonoBehaviour
             UIManager.Instance.gameOverCanvas.SetActive(true);
         }
 
-        Destroy(gameObject);
+        if(!isPlayer)
+            Destroy(gameObject);
+        else
+        {
+            PlayerManager.Instance.inventoryCanvas.transform.SetParent(null);
+            Destroy(gameObject);
+        }
     }
 }

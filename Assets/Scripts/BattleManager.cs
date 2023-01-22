@@ -130,22 +130,21 @@ public class BattleManager : MonoBehaviour
 
             foreach (var item in possibleLoot)
             {
-                var newItem = Instantiate(item, lootedItemPosition.position, Quaternion.identity);
-                newItem.SetItemStatistics();
+                var newItem = Instantiate(item, lootedItemPosition.position, Quaternion.identity);;
                 var newItemSpriteRenderer = newItem.GetComponent<SpriteRenderer>();
 
                 if (item.statBoostType == StatBoostType.ATTACK)
-                    UIManager.Instance.itemLootText.text = $"{newItem.itemName} <br> ATK: {newItem.randomStatistic}";
+                    UIManager.Instance.itemLootText.text = $"{newItem.itemName} <br> ATK: {newItem.itemStats}";
                 else if (item.statBoostType == StatBoostType.HEALTH)
-                    UIManager.Instance.itemLootText.text = $"{newItem.itemName} <br> HP: {newItem.randomStatistic}";
+                    UIManager.Instance.itemLootText.text = $"{newItem.itemName} <br> HP: {newItem.itemStats}";
 
                 UIManager.Instance.itemLootText.DOFade(1f, 1.5f).OnComplete(() => UIManager.Instance.itemLootText.DOFade(0f, 1f).SetDelay(0.6f));
 
                 newItemSpriteRenderer.color = new Color(newItemSpriteRenderer.color.r, newItemSpriteRenderer.color.g, newItemSpriteRenderer.color.b, 0);
                 newItemSpriteRenderer.DOFade(1f, 1.5f).OnComplete(() => newItemSpriteRenderer.DOFade(0f, 1f).SetDelay(0.6f));
 
-                newItem.EquipItem(player.statistics, newItem.randomStatistic, player.playerInventory.equipment[newItem.itemType]);
-                Debug.Log($"Looted {newItem.itemName} with {newItem.randomStatistic} statistics!");
+                newItem.EquipItem(player.statistics, newItem.itemStats, player.playerInventory.equipment[newItem.itemType], newItem.itemType, newItem.indexInDatabase);
+                Debug.Log($"Looted {newItem.itemName} with {newItem.itemStats} statistics!");
             }
 
             player.playerInventory.gold += possibleGold;

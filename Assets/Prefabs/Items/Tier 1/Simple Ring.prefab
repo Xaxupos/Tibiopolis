@@ -98,11 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 6
-  itemDesc: 
   statBoostType: 0
   itemSprite: {fileID: 21300000, guid: ae5d991b722da9941ab5d0035c43af6d, type: 3}
   itemName: Gold Ring
   dropChance: 0.35
-  itemMinStatistics: 1
-  itemMaxStatistics: 3
-  randomStatistic: 1
+  indexInDatabase: 5
+  itemStats: 1

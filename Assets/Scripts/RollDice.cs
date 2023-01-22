@@ -45,7 +45,7 @@ public class RollDice : MonoBehaviour
 
         if (indexToMove >= 40)
         {
-            int newIndexToMove = indexToMove - 40;
+            int newIndexToMove = 0;
             move1 = newIndexToMove;
             Invoke("InvokeMove", 0.75f);
             return;

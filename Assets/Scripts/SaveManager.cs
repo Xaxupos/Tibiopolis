@@ -46,6 +46,7 @@ public class SaveManager : MonoBehaviour
         LoadGold();
         LoadHP();
         LoadATK();
+        LoadItems();
 
         //Enemies on board
         LoadEnemiesOnBoard();
@@ -93,6 +94,12 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.SetInt($"_PlayerBoardPos{ProfileManager.Instance.currentProfile}", PlayerManager.Instance.playerMovement.currentCardIndex);
         PlayerPrefs.SetInt($"_PlayerBoardRotation{ProfileManager.Instance.currentProfile}", PlayerManager.Instance.playerMovement.currentLineIndex);
     }
+
+    public void SaveItem(ItemType itemType, int itemIndex)
+    {
+        PlayerPrefs.SetInt($"_PlayerItem{itemType}{ProfileManager.Instance.currentProfile}", itemIndex);
+    }
+
     public void LoadGold()
     {
         int gold = PlayerPrefs.GetInt($"_Gold{ProfileManager.Instance.currentProfile}");
@@ -156,12 +163,45 @@ public class SaveManager : MonoBehaviour
             BoardManager.Instance.transform.localEulerAngles.z + (90 * PlayerPrefs.GetInt($"_PlayerBoardRotation{ProfileManager.Instance.currentProfile}", PlayerManager.Instance.playerMovement.currentLineIndex))
             ); ;
     }
+
+    public void LoadItems()
+    {
+        foreach (var eq in PlayerManager.Instance.playerInventory.equipment)
+        {
+            if(PlayerPrefs.HasKey($"_PlayerItem{eq.Key}{ProfileManager.Instance.currentProfile}"))
+            {
+                var index = PlayerPrefs.GetInt($"_PlayerItem{eq.Key}{ProfileManager.Instance.currentProfile}");
+
+                var item = ItemDatabase.Instance.GetItemByIndex(index);
+                item.EquipItemNoStats(PlayerManager.Instance.statistics, PlayerManager.Instance.playerInventory.equipment[eq.Key], index);
+            }
+        }
+    }
+
     public void DeleteAll()
     {
         PlayerPrefs.DeleteKey($"_Gold{ProfileManager.Instance.currentProfile}");
         PlayerPrefs.DeleteKey($"_CurrentHP{ProfileManager.Instance.currentProfile}");
         PlayerPrefs.DeleteKey($"_MaxHP{ProfileManager.Instance.currentProfile}");
         PlayerPrefs.DeleteKey($"_ATK{ProfileManager.Instance.currentProfile}");
+
+        foreach (var entry in BoardManager.Instance.savedMonsterOnBoard)
+        {
+            if (PlayerPrefs.HasKey($"_Enemy{entry.Key}Board{ProfileManager.Instance.currentProfile}"))
+                PlayerPrefs.DeleteKey($"_Enemy{entry.Key}Board{ProfileManager.Instance.currentProfile}");
+        }
+
+        foreach (var eq in PlayerManager.Instance.playerInventory.equipment)
+        {
+            if (PlayerPrefs.HasKey($"_PlayerItem{eq.Key}{ProfileManager.Instance.currentProfile}"))
+            {
+                PlayerPrefs.DeleteKey($"_PlayerItem{eq.Key}{ProfileManager.Instance.currentProfile}");
+            }
+        }
+
+        PlayerPrefs.DeleteKey($"_PlayerBoardPos{ProfileManager.Instance.currentProfile}");
+        PlayerPrefs.DeleteKey($"_PlayerBoardRotation{ProfileManager.Instance.currentProfile}");
+
         ProfileManager.Instance.DeleteProfile();
     }
 }

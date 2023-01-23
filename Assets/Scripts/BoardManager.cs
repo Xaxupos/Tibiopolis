@@ -53,8 +53,14 @@ public class BoardManager : MonoBehaviour
             if (card.cardType == CardType.ENEMY)
             {
                 if(spawnEnemies)
-                {
-                    SpawnEnemy(card, lines[lineIndex]);
+                {   
+                    if(card.cardIndexInBoard == 30)
+                    {
+                        SpawnBoss(card, SpawnManager.Instance.scarlett);
+                    }
+                    else
+                        SpawnEnemy(card, lines[lineIndex]);
+
                     Debug.Log("Spawning not saved enemy!");
                 }
             }
@@ -93,6 +99,18 @@ public class BoardManager : MonoBehaviour
         savedMonsterOnBoard.Add(card.cardIndexInBoard, spawnedEnemy.GetComponent<Enemy>().monsterType);
     }
 
+    private void SpawnBoss(BoardCard card, Collectible scarlet)
+    {
+        var spawnedEnemy = Instantiate(scarlet, card.transform);
+        spawnedEnemy.transform.localPosition = Vector3.zero;
+        spawnedEnemy.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
+        card.boundedCollectible = spawnedEnemy;
+
+        Shuffle(spawnedEnemy.GetComponent<Enemy>().lootTable.possibleItemsDrop);
+
+        spawnedEnemy.GetComponent<Enemy>().assignedBoardCard = card;
+        savedMonsterOnBoard.Add(card.cardIndexInBoard, spawnedEnemy.GetComponent<Enemy>().monsterType);
+    }
 
     void Shuffle(List<Item> list)
     {

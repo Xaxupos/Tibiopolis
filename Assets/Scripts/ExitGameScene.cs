@@ -10,4 +10,9 @@ public class ExitGameScene : MonoBehaviour
         ProfileManager.Instance.DeleteProfile();
         SceneManager.LoadScene("Menu");
     }
+
+    public void LoadMenuNoDelete()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }

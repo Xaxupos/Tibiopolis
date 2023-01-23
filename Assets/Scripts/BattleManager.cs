@@ -9,6 +9,7 @@ public class BattleManager : MonoBehaviour
     public AudioSource battleEngageSound;
     public AttackAudio dieAudio;
     public AudioSource goldLootAudio;
+    public AudioSource healSound;
 
     public Transform playerBattlePosition;
     public Transform enemyBattlePosition;
@@ -149,6 +150,17 @@ public class BattleManager : MonoBehaviour
 
             player.playerInventory.gold += possibleGold;
             player.playerInventory.goldText.text = $"{player.playerInventory.gold}";
+
+            if (enemy.scarlet)
+            {
+                PlayerManager.Instance.statistics.currentHealth += enemy.healAmount;
+                if (PlayerManager.Instance.statistics.currentHealth > PlayerManager.Instance.statistics.maxHealth)
+                    PlayerManager.Instance.statistics.currentHealth = PlayerManager.Instance.statistics.maxHealth;
+
+                healSound.Play();
+                PlayerManager.Instance.playerInventory.healthText.text = $"{PlayerManager.Instance.statistics.currentHealth}/{PlayerManager.Instance.statistics.maxHealth}";
+                PlayerManager.Instance.statistics.healthbar.UpdateHealthbar(PlayerManager.Instance.statistics.currentHealth, PlayerManager.Instance.statistics.maxHealth);
+            }
 
             StopAllCoroutines();
             player.statistics.healthbar.holder.SetActive(false);

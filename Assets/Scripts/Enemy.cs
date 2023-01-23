@@ -9,6 +9,9 @@ public class Enemy : Collectible
     public MonsterLootTable lootTable;
     public AttackAudio attackAudio;
     public MonsterType monsterType;
+    public bool scarlet = false;
+
+    public int healAmount = 25;
 
     public override void OnCollect()
     {
@@ -38,5 +41,6 @@ public enum MonsterType
     DEMON,
     EFREET,
     WOODLING,
-    SCARAB
+    SCARAB,
+    SCARLETT
 }

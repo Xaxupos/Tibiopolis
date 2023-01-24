@@ -10,6 +10,7 @@ public class SpawnManager : MonoBehaviour
     public Collectible goldChest = new();
     public Collectible scarlett = new();
     public Collectible startCard = new();
+    public Collectible imbu = new();
 
     public List<Collectible> firstLineEnemies = new();
     public List<Collectible> secondLineEnemies = new();

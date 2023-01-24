@@ -76,6 +76,10 @@ public class BoardManager : MonoBehaviour
             {
                 SpawnStart(card);
             }
+            else if(card.cardType == CardType.IMBU)
+            {
+                SpawnImbu(card);
+            }
         }
 
         if(!PlayerPrefs.HasKey($"_PlayerBoardPos{ProfileManager.Instance.currentProfile}"))
@@ -155,6 +159,14 @@ public class BoardManager : MonoBehaviour
     private void SpawnStart(BoardCard card)
     {
         var spawnedStart = Instantiate(SpawnManager.Instance.startCard, card.transform);
+        spawnedStart.transform.localPosition = Vector3.zero;
+        spawnedStart.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
+        card.boundedCollectible = spawnedStart;
+    }
+
+    private void SpawnImbu(BoardCard card)
+    {
+        var spawnedStart = Instantiate(SpawnManager.Instance.imbu, card.transform);
         spawnedStart.transform.localPosition = Vector3.zero;
         spawnedStart.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
         card.boundedCollectible = spawnedStart;

@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 465655486248068470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.2, z: 1}
+  m_LocalScale: {x: 0.85, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 465655487422102923}
@@ -107,6 +107,8 @@ MonoBehaviour:
   lootTable: {fileID: 6931295145658029286}
   attackAudio: {fileID: 6009198991880442015}
   monsterType: 7
+  scarlet: 0
+  healAmount: 25
 --- !u!114 &7900128022528278890
 MonoBehaviour:
   m_ObjectHideFlags: 0

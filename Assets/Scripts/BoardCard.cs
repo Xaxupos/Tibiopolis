@@ -33,5 +33,6 @@ public enum CardType
     CHEST,
     BARREL,
     START,
-    BOSS
+    BOSS,
+    IMBU
 }

@@ -9,6 +9,9 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
+    public GameObject imbuCanvas;
+    public Reward reward1;
+    public Reward reward2;
     public GameObject menuButton;
     public GameObject gameOverCanvas;
     public Button rollButton;

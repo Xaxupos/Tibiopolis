@@ -7,7 +7,6 @@ public class ExitGameScene : MonoBehaviour
 {
     public void LoadMenu()
     {
-        ProfileManager.Instance.DeleteProfile();
         SceneManager.LoadScene("Menu");
     }
 

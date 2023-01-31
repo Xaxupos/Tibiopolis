@@ -568,7 +568,7 @@ MonoBehaviour:
   attackAudio: {fileID: 1832214489305257871}
   monsterType: 13
   scarlet: 1
-  healAmount: 25
+  healAmount: 15
 --- !u!114 &2858456933417748090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,6 +588,7 @@ MonoBehaviour:
   maxHealth: 30
   damage: 15
   isEnemy: 1
+  minMinDamage: 5
   minDamage: 12
   maxDamage: 15
   minHealthRandom: 40

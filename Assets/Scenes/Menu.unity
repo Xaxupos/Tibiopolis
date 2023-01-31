@@ -1507,7 +1507,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 20.950012, y: -12.659973}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &790727837
@@ -1532,15 +1532,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Made by Xaxup '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4eccd51250cfa3948a3ac1e21d15fe34, type: 2}
-  m_sharedMaterial: {fileID: 7304186015023537574, guid: 4eccd51250cfa3948a3ac1e21d15fe34, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0eb16437c312288479ab65da25b17ba3, type: 2}
+  m_sharedMaterial: {fileID: -4653352222020185841, guid: 0eb16437c312288479ab65da25b17ba3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2315255807
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.5372549}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1821,7 +1821,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: zamknij gre
+  m_text: ZAMKNIJ GRE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0eb16437c312288479ab65da25b17ba3, type: 2}
   m_sharedMaterial: {fileID: -4653352222020185841, guid: 0eb16437c312288479ab65da25b17ba3, type: 2}

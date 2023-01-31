@@ -9,9 +9,14 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
+    public GameObject sklepCanvas;
     public GameObject imbuCanvas;
+    public GameObject zapytaniaCanvas;
+    public TMP_Text zapytaniaText;
+    public Image zapytaniaImage;
     public Reward reward1;
     public Reward reward2;
+    public Reward reward3;
     public GameObject menuButton;
     public GameObject gameOverCanvas;
     public Button rollButton;
@@ -38,5 +43,69 @@ public class UIManager : MonoBehaviour
     {
         swordsSprite.DOFade(0f, 1f);
         rolledDmgText.DOFade(0, 0.5f);
+    }
+
+    public void BuyAttack()
+    {
+        if (PlayerManager.Instance.playerInventory.gold < 5) return;
+
+        PlayerManager.Instance.playerInventory.gold -= 5;
+        PlayerManager.Instance.playerInventory.goldText.text = $"{PlayerManager.Instance.playerInventory.gold}";
+
+        BattleManager.Instance.attackSound.Play();
+        PlayerManager.Instance.statistics.damage += 4;
+        PlayerManager.Instance.playerInventory.attackText.text = PlayerManager.Instance.statistics.damage.ToString();
+
+        rollButton.gameObject.SetActive(true);
+        sklepCanvas.SetActive(false);
+
+        SaveManager.Instance.SaveProfile();
+    }
+
+    public void BuyMaxHP()
+    {
+        if (PlayerManager.Instance.playerInventory.gold < 5) return;
+
+        PlayerManager.Instance.playerInventory.gold -= 5;
+        PlayerManager.Instance.playerInventory.goldText.text = $"{PlayerManager.Instance.playerInventory.gold}";
+
+        PlayerManager.Instance.statistics.currentHealth += 10;
+        PlayerManager.Instance.statistics.maxHealth += 10;
+        if (PlayerManager.Instance.statistics.currentHealth > PlayerManager.Instance.statistics.maxHealth)
+            PlayerManager.Instance.statistics.currentHealth = PlayerManager.Instance.statistics.maxHealth;
+
+        BattleManager.Instance.healSound.Play();
+        PlayerManager.Instance.playerInventory.healthText.text = $"{PlayerManager.Instance.statistics.currentHealth}/{PlayerManager.Instance.statistics.maxHealth}";
+        PlayerManager.Instance.statistics.healthbar.UpdateHealthbar(PlayerManager.Instance.statistics.currentHealth, PlayerManager.Instance.statistics.maxHealth);
+
+        rollButton.gameObject.SetActive(true);
+        sklepCanvas.SetActive(false);
+
+        SaveManager.Instance.SaveProfile();
+    }
+
+    public void BuyHealToFull()
+    {
+        if (PlayerManager.Instance.playerInventory.gold < 8) return;
+
+        PlayerManager.Instance.playerInventory.gold -= 8;
+        PlayerManager.Instance.playerInventory.goldText.text = $"{PlayerManager.Instance.playerInventory.gold}";
+
+        BattleManager.Instance.healSound.Play();
+        PlayerManager.Instance.statistics.currentHealth = PlayerManager.Instance.statistics.maxHealth;
+
+        PlayerManager.Instance.playerInventory.healthText.text = $"{PlayerManager.Instance.statistics.currentHealth}/{PlayerManager.Instance.statistics.maxHealth}";
+        PlayerManager.Instance.statistics.healthbar.UpdateHealthbar(PlayerManager.Instance.statistics.currentHealth, PlayerManager.Instance.statistics.maxHealth);
+
+        rollButton.gameObject.SetActive(true);
+        sklepCanvas.SetActive(false);
+
+        SaveManager.Instance.SaveProfile();
+    }
+    public void Leave()
+    {
+        sklepCanvas.SetActive(false);
+        rollButton.gameObject.SetActive(true);
+        SaveManager.Instance.SaveProfile();
     }
 }

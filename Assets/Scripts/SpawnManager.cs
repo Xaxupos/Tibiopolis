@@ -11,6 +11,8 @@ public class SpawnManager : MonoBehaviour
     public Collectible scarlett = new();
     public Collectible startCard = new();
     public Collectible imbu = new();
+    public Collectible zapytania = new();
+    public Collectible sklep = new();
 
     public List<Collectible> firstLineEnemies = new();
     public List<Collectible> secondLineEnemies = new();

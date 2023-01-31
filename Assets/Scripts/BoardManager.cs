@@ -80,6 +80,14 @@ public class BoardManager : MonoBehaviour
             {
                 SpawnImbu(card);
             }
+            else if(card.cardType == CardType.ZAPYTANIE)
+            {
+                SpawnZapytanie(card);
+            }
+            else if(card.cardType == CardType.SKLEP)
+            {
+                SpawnSklep(card);
+            }
         }
 
         if(!PlayerPrefs.HasKey($"_PlayerBoardPos{ProfileManager.Instance.currentProfile}"))
@@ -148,9 +156,25 @@ public class BoardManager : MonoBehaviour
         card.boundedCollectible = spawnedBarrel;
     }
 
+    private void SpawnSklep(BoardCard card)
+    {
+        var spawnedBarrel = Instantiate(SpawnManager.Instance.sklep, card.transform);
+        spawnedBarrel.transform.localPosition = Vector3.zero;
+        spawnedBarrel.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
+        card.boundedCollectible = spawnedBarrel;
+    }
+
     private void SpawnChest(BoardCard card)
     {
         var spawnedChest = Instantiate(SpawnManager.Instance.goldChest, card.transform);
+        spawnedChest.transform.localPosition = Vector3.zero;
+        spawnedChest.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
+        card.boundedCollectible = spawnedChest;
+    }
+
+    private void SpawnZapytanie(BoardCard card)
+    {
+        var spawnedChest = Instantiate(SpawnManager.Instance.zapytania, card.transform);
         spawnedChest.transform.localPosition = Vector3.zero;
         spawnedChest.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
         card.boundedCollectible = spawnedChest;

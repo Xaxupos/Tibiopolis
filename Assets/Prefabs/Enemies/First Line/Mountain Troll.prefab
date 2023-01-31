@@ -209,6 +209,8 @@ MonoBehaviour:
   lootTable: {fileID: 7741411937333547541}
   attackAudio: {fileID: 2464197908063400807}
   monsterType: 1
+  scarlet: 0
+  healAmount: 25
 --- !u!114 &5704810085169673338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,10 +230,10 @@ MonoBehaviour:
   maxHealth: 10
   damage: 5
   isEnemy: 1
-  minDamage: 2
-  maxDamage: 5
-  minHealthRandom: 7
-  maxHealthRandom: 10
+  minDamage: 4
+  maxDamage: 6
+  minHealthRandom: 9
+  maxHealthRandom: 12
 --- !u!114 &7741411937333547541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,8 +254,7 @@ MonoBehaviour:
   - {fileID: 8614571469882915794, guid: 6194acfc10f62574b9391ff700b7e5d5, type: 3}
   - {fileID: 98309819716893548, guid: a54142e76e1fa0541ab1c78b672f5610, type: 3}
   - {fileID: 3287870340801741857, guid: a500e794b9d86e846ad71df2e07ae328, type: 3}
-  - {fileID: 5125194306341392997, guid: 05fe1b3ca856bcb4d9856d3ffd559c20, type: 3}
-  minGoldDrop: 1
+  minGoldDrop: 2
   maxGoldDrop: 4
   maxItemsDrop: 1
 --- !u!82 &485588829687595768

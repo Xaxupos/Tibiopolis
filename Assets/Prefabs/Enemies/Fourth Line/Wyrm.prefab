@@ -107,6 +107,8 @@ MonoBehaviour:
   lootTable: {fileID: 4461176966888380794}
   attackAudio: {fileID: 569471454460997814}
   monsterType: 6
+  scarlet: 0
+  healAmount: 25
 --- !u!114 &3493461195983621366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,10 +128,11 @@ MonoBehaviour:
   maxHealth: 30
   damage: 15
   isEnemy: 1
-  minDamage: 13
-  maxDamage: 20
-  minHealthRandom: 22
-  maxHealthRandom: 38
+  minMinDamage: 6
+  minDamage: 16
+  maxDamage: 22
+  minHealthRandom: 25
+  maxHealthRandom: 40
 --- !u!114 &4461176966888380794
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class CombatStatistics : MonoBehaviour
     public int damage = 10;
 
     public bool isEnemy = false;
+    public int minMinDamage = 3;
     public int minDamage = 1;
     public int maxDamage = 10;
     public int minHealthRandom = 1;
@@ -32,7 +33,7 @@ public class CombatStatistics : MonoBehaviour
 
     public void Attack(CombatStatistics target, TMP_Text rolledDmgText, bool playerTurn)
     {
-        int rolledDamage = Random.Range(1, damage + 1);
+        int rolledDamage = Random.Range(minMinDamage, damage + 1);
 
         if (playerTurn)
             rolledDmgText.text = "Gracz zadaje " + rolledDamage.ToString() + " obra¿eñ!";

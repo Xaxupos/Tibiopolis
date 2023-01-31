@@ -34,5 +34,7 @@ public enum CardType
     BARREL,
     START,
     BOSS,
-    IMBU
+    IMBU,
+    ZAPYTANIE,
+    SKLEP
 }

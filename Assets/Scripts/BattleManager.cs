@@ -10,6 +10,7 @@ public class BattleManager : MonoBehaviour
     public AttackAudio dieAudio;
     public AudioSource goldLootAudio;
     public AudioSource healSound;
+    public AudioSource attackSound;
 
     public Transform playerBattlePosition;
     public Transform enemyBattlePosition;
@@ -17,6 +18,7 @@ public class BattleManager : MonoBehaviour
     public Transform goldItemPosition;
 
     public GameObject goldPrefab;
+    public Zapytanie[] zapytanias;
 
     public static BattleManager Instance;
 

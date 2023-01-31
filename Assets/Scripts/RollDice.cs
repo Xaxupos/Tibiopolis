@@ -25,26 +25,6 @@ public class RollDice : MonoBehaviour
 
         if(indexToMove >= 40)
         {
-            int newIndexToMove = indexToMove - 40;
-            move1 = newIndexToMove;
-            Invoke("InvokeMove", 0.75f);
-            return;
-        }
-
-        move2 = indexToMove;
-        Invoke("InvokeMove2", 0.75f);
-    }
-
-    public void Roll(int amount)
-    {
-        if (PlayerManager.Instance.playerMovement.isMoving) return;
-        PlayerManager.Instance.playerMovement.isMoving = true;
-        rollSound.Play();
-
-        int indexToMove = PlayerManager.Instance.playerMovement.currentCardIndex + amount;
-
-        if (indexToMove >= 40)
-        {
             int newIndexToMove = 0;
             move1 = newIndexToMove;
             Invoke("InvokeMove", 0.75f);

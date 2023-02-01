@@ -21,7 +21,10 @@ public class Item : MonoBehaviour
         if (statBoostType == StatBoostType.ATTACK)
             statistics.damage -= stats;
         else if (statBoostType == StatBoostType.HEALTH)
+        {
             statistics.maxHealth -= stats;
+            statistics.currentHealth -= stats;
+        }
 
         slot.equippedItem = this;
         slot.slotItemImage.sprite = itemSprite;
@@ -87,6 +90,8 @@ public class Item : MonoBehaviour
             PlayerManager.Instance.playerInventory.healthText.text = $"{statistics.currentHealth}/{statistics.maxHealth}";
         }
 
+        PlayerManager.Instance.playerInventory.healthText.text = $"{PlayerManager.Instance.statistics.currentHealth}/{PlayerManager.Instance.statistics.maxHealth}";
+        PlayerManager.Instance.statistics.healthbar.UpdateHealthbar(PlayerManager.Instance.statistics.currentHealth, PlayerManager.Instance.statistics.maxHealth);
         SaveManager.Instance.SaveItem(itemType, itemIndex);
     }
 }

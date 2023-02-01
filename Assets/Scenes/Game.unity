@@ -3969,7 +3969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1115.6, y: 473}
+  m_AnchoredPosition: {x: 293, y: 75}
   m_SizeDelta: {x: 128.1965, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &721311256
@@ -4019,8 +4019,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 300
-  m_fontSizeBase: 300
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4055,7 +4055,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -76.01653}
+  m_margin: {x: 0, y: 0, z: 0, w: -153.83696}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5824,7 +5824,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -789, y: -269}
+  m_AnchoredPosition: {x: -857, y: 309}
   m_SizeDelta: {x: 360, y: 360}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1441647948
@@ -8910,11 +8910,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6119947719550777150, guid: cd742b5b7e27d914a98e1f6234c8f9a8, type: 3}
       propertyPath: cardType
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6119947719593189502, guid: cd742b5b7e27d914a98e1f6234c8f9a8, type: 3}
       propertyPath: cardType
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6119947719774585632, guid: cd742b5b7e27d914a98e1f6234c8f9a8, type: 3}
+      propertyPath: cardType
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6119947719858926868, guid: cd742b5b7e27d914a98e1f6234c8f9a8, type: 3}
       propertyPath: cardType

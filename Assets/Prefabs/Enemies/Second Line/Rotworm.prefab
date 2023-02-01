@@ -265,6 +265,7 @@ MonoBehaviour:
   maxHealth: 15
   damage: 7
   isEnemy: 1
+  minMinDamage: 3
   minDamage: 6
   maxDamage: 10
   minHealthRandom: 17
@@ -560,6 +561,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2038998389032946414, guid: 1242bf82816519040b7fa7b668b97177, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2038998389032946414, guid: 1242bf82816519040b7fa7b668b97177, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -589,11 +594,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2038998389032946414, guid: 1242bf82816519040b7fa7b668b97177, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1
+      value: -0.85
       objectReference: {fileID: 0}
     - target: {fileID: 2038998389032946414, guid: 1242bf82816519040b7fa7b668b97177, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 2038998389032946414, guid: 1242bf82816519040b7fa7b668b97177, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

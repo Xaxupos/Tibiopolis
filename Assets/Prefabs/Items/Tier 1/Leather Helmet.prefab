@@ -103,4 +103,4 @@ MonoBehaviour:
   itemName: Leather Helmet
   dropChance: 0.2
   indexInDatabase: 2
-  itemStats: 2
+  itemStats: 3

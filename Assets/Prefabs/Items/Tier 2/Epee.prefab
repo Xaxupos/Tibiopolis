@@ -103,4 +103,4 @@ MonoBehaviour:
   itemName: Epee
   dropChance: 0.2
   indexInDatabase: 9
-  itemStats: 5
+  itemStats: 6

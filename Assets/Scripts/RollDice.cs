@@ -12,6 +12,28 @@ public class RollDice : MonoBehaviour
     private int move1;
     private int move2;
 
+    public void Roll(int i)
+    {
+        if (PlayerManager.Instance.playerMovement.isMoving) return;
+        PlayerManager.Instance.playerMovement.isMoving = true;
+        rollSound.Play();
+
+        diceOutputText.text = i.ToString();
+
+        int indexToMove = PlayerManager.Instance.playerMovement.currentCardIndex + i;
+
+        if (indexToMove >= 40)
+        {
+            int newIndexToMove = 0;
+            move1 = newIndexToMove;
+            Invoke("InvokeMove", 0.75f);
+            return;
+        }
+
+        move2 = indexToMove;
+        Invoke("InvokeMove2", 0.75f);
+    }
+
     public void Roll()
     {
         if (PlayerManager.Instance.playerMovement.isMoving) return;

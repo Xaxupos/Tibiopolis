@@ -103,4 +103,4 @@ MonoBehaviour:
   itemName: Steel Boots
   dropChance: 0.2
   indexInDatabase: 12
-  itemStats: 4
+  itemStats: 5

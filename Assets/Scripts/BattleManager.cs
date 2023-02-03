@@ -184,6 +184,11 @@ public class BattleManager : MonoBehaviour
             enemy.statistics.statsText.gameObject.SetActive(false);
             enemy.statistics.healthbar.holder.SetActive(false);
             enemy.transform.DOLocalMove(enemySavedPos, 1f);
+
+            int gold = PlayerManager.Instance.playerInventory.gold;
+            int roundedGold = 25 * Mathf.RoundToInt((float)gold / 25);
+            PlayerManager.Instance.playerInventory.goldText.text = $"{roundedGold}";
+
             SaveManager.Instance.DeleteProfile();
         }
     }

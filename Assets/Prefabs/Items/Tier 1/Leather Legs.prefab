@@ -103,4 +103,4 @@ MonoBehaviour:
   itemName: Leather Legs
   dropChance: 0.2
   indexInDatabase: 3
-  itemStats: 3
+  itemStats: 4

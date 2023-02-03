@@ -568,7 +568,7 @@ MonoBehaviour:
   attackAudio: {fileID: 1832214489305257871}
   monsterType: 13
   scarlet: 1
-  healAmount: 15
+  healAmount: 20
 --- !u!114 &2858456933417748090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,9 +611,27 @@ MonoBehaviour:
   - {fileID: 5482772233142030343, guid: 0a1d8026a2a673a4cbc3b9807e99b70c, type: 3}
   - {fileID: 8121252907769182204, guid: 6633527da25bd5641a4f559c95bb2320, type: 3}
   - {fileID: 1457571849049815511, guid: 6eb461da42e969a44a418d6394a920c3, type: 3}
+  - {fileID: 8574268796941324596, guid: d81961faac3ec6942a8d97b9adc95240, type: 3}
+  - {fileID: 9037699140683571122, guid: 7077375851d44f249b937b3382283e8d, type: 3}
+  - {fileID: 5482772233142030343, guid: 0a1d8026a2a673a4cbc3b9807e99b70c, type: 3}
+  - {fileID: 8121252907769182204, guid: 6633527da25bd5641a4f559c95bb2320, type: 3}
+  - {fileID: 1457571849049815511, guid: 6eb461da42e969a44a418d6394a920c3, type: 3}
+  - {fileID: 8574268796941324596, guid: d81961faac3ec6942a8d97b9adc95240, type: 3}
   - {fileID: 40255460025841726, guid: 8b0336770bd6fbb49ba1ac5214972d42, type: 3}
-  minGoldDrop: 25
-  maxGoldDrop: 35
+  - {fileID: 1457571849049815511, guid: 6eb461da42e969a44a418d6394a920c3, type: 3}
+  - {fileID: 8121252907769182204, guid: 6633527da25bd5641a4f559c95bb2320, type: 3}
+  - {fileID: 5482772233142030343, guid: 0a1d8026a2a673a4cbc3b9807e99b70c, type: 3}
+  - {fileID: 40255460025841726, guid: 8b0336770bd6fbb49ba1ac5214972d42, type: 3}
+  - {fileID: 5391143696182289436, guid: 49403c7916a42894ab0cee5919dd314b, type: 3}
+  - {fileID: 8574268796941324596, guid: d81961faac3ec6942a8d97b9adc95240, type: 3}
+  - {fileID: 5391143696182289436, guid: 49403c7916a42894ab0cee5919dd314b, type: 3}
+  - {fileID: 40255460025841726, guid: 8b0336770bd6fbb49ba1ac5214972d42, type: 3}
+  - {fileID: 1457571849049815511, guid: 6eb461da42e969a44a418d6394a920c3, type: 3}
+  - {fileID: 5391143696182289436, guid: 49403c7916a42894ab0cee5919dd314b, type: 3}
+  - {fileID: 9037699140683571122, guid: 7077375851d44f249b937b3382283e8d, type: 3}
+  - {fileID: 8574268796941324596, guid: d81961faac3ec6942a8d97b9adc95240, type: 3}
+  minGoldDrop: 30
+  maxGoldDrop: 30
   maxItemsDrop: 1
 --- !u!82 &3563261751533183125
 AudioSource:

@@ -231,8 +231,8 @@ MonoBehaviour:
   damage: 5
   isEnemy: 1
   minMinDamage: 3
-  minDamage: 4
-  maxDamage: 6
+  minDamage: 5
+  maxDamage: 7
   minHealthRandom: 9
   maxHealthRandom: 12
 --- !u!114 &7741411937333547541
@@ -255,6 +255,10 @@ MonoBehaviour:
   - {fileID: 8614571469882915794, guid: 6194acfc10f62574b9391ff700b7e5d5, type: 3}
   - {fileID: 98309819716893548, guid: a54142e76e1fa0541ab1c78b672f5610, type: 3}
   - {fileID: 3287870340801741857, guid: a500e794b9d86e846ad71df2e07ae328, type: 3}
+  - {fileID: 8614571469882915794, guid: 6194acfc10f62574b9391ff700b7e5d5, type: 3}
+  - {fileID: 183694927813451138, guid: c040d5ff0161f174eb250c4eb77cac06, type: 3}
+  - {fileID: 98309819716893548, guid: a54142e76e1fa0541ab1c78b672f5610, type: 3}
+  - {fileID: 6893972084703564291, guid: d6d50e8b5264a4f419c0b1dcd14d1251, type: 3}
   minGoldDrop: 2
   maxGoldDrop: 4
   maxItemsDrop: 1

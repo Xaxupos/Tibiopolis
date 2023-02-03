@@ -47,48 +47,46 @@ public class UIManager : MonoBehaviour
 
     public void BuyAttack()
     {
-        if (PlayerManager.Instance.playerInventory.gold < 5) return;
+        if (PlayerManager.Instance.playerInventory.gold < 7) return;
 
-        PlayerManager.Instance.playerInventory.gold -= 5;
+        PlayerManager.Instance.playerInventory.gold -= 7;
         PlayerManager.Instance.playerInventory.goldText.text = $"{PlayerManager.Instance.playerInventory.gold}";
 
         BattleManager.Instance.attackSound.Play();
-        PlayerManager.Instance.statistics.damage += 4;
+        PlayerManager.Instance.statistics.damage += 3;
         PlayerManager.Instance.playerInventory.attackText.text = PlayerManager.Instance.statistics.damage.ToString();
-
-        rollButton.gameObject.SetActive(true);
-        sklepCanvas.SetActive(false);
 
         SaveManager.Instance.SaveProfile();
     }
 
     public void BuyMaxHP()
     {
-        if (PlayerManager.Instance.playerInventory.gold < 5) return;
+        if (PlayerManager.Instance.playerInventory.gold < 7) return;
 
-        PlayerManager.Instance.playerInventory.gold -= 5;
+        PlayerManager.Instance.playerInventory.gold -= 7;
         PlayerManager.Instance.playerInventory.goldText.text = $"{PlayerManager.Instance.playerInventory.gold}";
 
-        PlayerManager.Instance.statistics.currentHealth += 10;
-        PlayerManager.Instance.statistics.maxHealth += 10;
+        PlayerManager.Instance.statistics.currentHealth += 8;
+        PlayerManager.Instance.statistics.maxHealth += 8;
         if (PlayerManager.Instance.statistics.currentHealth > PlayerManager.Instance.statistics.maxHealth)
             PlayerManager.Instance.statistics.currentHealth = PlayerManager.Instance.statistics.maxHealth;
 
         BattleManager.Instance.healSound.Play();
+
+        PlayerManager.Instance.statistics.damage += 1;
+        PlayerManager.Instance.playerInventory.attackText.text = PlayerManager.Instance.statistics.damage.ToString();
+
         PlayerManager.Instance.playerInventory.healthText.text = $"{PlayerManager.Instance.statistics.currentHealth}/{PlayerManager.Instance.statistics.maxHealth}";
         PlayerManager.Instance.statistics.healthbar.UpdateHealthbar(PlayerManager.Instance.statistics.currentHealth, PlayerManager.Instance.statistics.maxHealth);
-
-        rollButton.gameObject.SetActive(true);
-        sklepCanvas.SetActive(false);
 
         SaveManager.Instance.SaveProfile();
     }
 
     public void BuyHealToFull()
     {
-        if (PlayerManager.Instance.playerInventory.gold < 8) return;
+        if (PlayerManager.Instance.playerInventory.gold < 9) return;
 
-        PlayerManager.Instance.playerInventory.gold -= 8;
+        PlayerManager.Instance.playerInventory.gold -= 9;
         PlayerManager.Instance.playerInventory.goldText.text = $"{PlayerManager.Instance.playerInventory.gold}";
 
         BattleManager.Instance.healSound.Play();
@@ -96,9 +94,6 @@ public class UIManager : MonoBehaviour
 
         PlayerManager.Instance.playerInventory.healthText.text = $"{PlayerManager.Instance.statistics.currentHealth}/{PlayerManager.Instance.statistics.maxHealth}";
         PlayerManager.Instance.statistics.healthbar.UpdateHealthbar(PlayerManager.Instance.statistics.currentHealth, PlayerManager.Instance.statistics.maxHealth);
-
-        rollButton.gameObject.SetActive(true);
-        sklepCanvas.SetActive(false);
 
         SaveManager.Instance.SaveProfile();
     }

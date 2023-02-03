@@ -20,6 +20,11 @@ public class StartCard : Collectible
         goldCanvas.transform.DOMove(new Vector3(-1.5f, 0, 0), 0.75f);
         goldCanvas.DOFade(1f, 0.75f).OnComplete(() => { goldCanvas.DOFade(0f, 0.75f).SetDelay(0.6f).OnComplete(() => goldCanvas.transform.localPosition = localPos); });
 
+        int wins = PlayerPrefs.GetInt($"GetWinsByID{ProfileManager.Instance.currentID}");
+        wins++;
+
+        PlayerPrefs.SetInt($"GetWinsByID{ProfileManager.Instance.currentID}", wins);
+
         Invoke("InvokeAction", 0.4f);
     }
 
@@ -29,6 +34,10 @@ public class StartCard : Collectible
 
         PlayerManager.Instance.playerInventory.gold += goldAmount;
         PlayerManager.Instance.playerInventory.goldText.text = $"{PlayerManager.Instance.playerInventory.gold}";
+
+        int gold = PlayerManager.Instance.playerInventory.gold;
+        int roundedGold = 25 * Mathf.RoundToInt((float)gold / 25);
+        PlayerManager.Instance.playerInventory.goldText.text = $"{roundedGold}";
 
         UIManager.Instance.rollButton.gameObject.SetActive(false);
         UIManager.Instance.menuButton.SetActive(true);

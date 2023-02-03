@@ -9,6 +9,8 @@ public class ProfileManager : MonoBehaviour
     public static ProfileManager Instance;
 
     public string currentProfile = "";
+    public int currentID = 0;
+    public int currentWins = 0;
 
     private void Awake()
     {
@@ -20,13 +22,35 @@ public class ProfileManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Start()
+    {
+        if (!PlayerPrefs.HasKey("CurrentID"))
+            PlayerPrefs.SetInt("CurrentID", 0);
+    }
+
     public void CreateProfile()
     {
         if (currentProfile == "") return;
         if (PlayerPrefs.HasKey($"_ProfileName{currentProfile}")) return;
 
         PlayerPrefs.SetString($"_ProfileName{currentProfile}", $"{currentProfile}");
-        Debug.Log($"Created new profile with key _ProfileName{currentProfile} and value {currentProfile}");
+        
+        if(PlayerPrefs.HasKey($"GetIDByName{currentProfile}"))
+        {
+            currentID = PlayerPrefs.GetInt($"GetIDByName{currentProfile}");
+            currentWins = PlayerPrefs.GetInt($"GetWinsByID{currentID}");
+        }
+        else
+        {
+            int tempID = PlayerPrefs.GetInt("CurrentID");
+            tempID++;
+            currentID = tempID;
+            currentWins = 0;
+            PlayerPrefs.SetInt("CurrentID", currentID);
+            PlayerPrefs.SetInt($"GetWinsByID{currentID}", currentWins);
+            PlayerPrefs.SetInt($"GetIDByName{currentProfile}", currentID);
+            PlayerPrefs.SetString($"GetNickByID{currentID}", currentProfile);
+        }
 
         SceneManager.LoadScene("Game");
     }
@@ -35,6 +59,9 @@ public class ProfileManager : MonoBehaviour
     {
         if (currentProfile == "") return;
         if (!PlayerPrefs.HasKey($"_ProfileName{currentProfile}")) return;
+
+        currentID = PlayerPrefs.GetInt($"GetIDByName{currentProfile}");
+        currentWins = PlayerPrefs.GetInt($"GetWinsByID{currentID}");
 
         SceneManager.LoadScene("Game");
     }

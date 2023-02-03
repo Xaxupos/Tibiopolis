@@ -128,7 +128,7 @@ MonoBehaviour:
   maxHealth: 30
   damage: 15
   isEnemy: 1
-  minMinDamage: 6
+  minMinDamage: 5
   minDamage: 16
   maxDamage: 20
   minHealthRandom: 27

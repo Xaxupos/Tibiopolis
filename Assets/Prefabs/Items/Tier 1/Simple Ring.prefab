@@ -103,4 +103,4 @@ MonoBehaviour:
   itemName: Gold Ring
   dropChance: 0.2
   indexInDatabase: 5
-  itemStats: 1
+  itemStats: 2

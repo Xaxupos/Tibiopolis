@@ -103,4 +103,4 @@ MonoBehaviour:
   itemName: Leather Boots
   dropChance: 0.2
   indexInDatabase: 1
-  itemStats: 2
+  itemStats: 3

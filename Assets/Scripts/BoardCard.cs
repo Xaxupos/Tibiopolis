@@ -36,5 +36,6 @@ public enum CardType
     BOSS,
     IMBU,
     ZAPYTANIE,
-    SKLEP
+    SKLEP,
+    KOPERTY_ROLL
 }

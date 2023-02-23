@@ -87,6 +87,10 @@ public class BoardManager : MonoBehaviour
             else if(card.cardType == CardType.SKLEP)
             {
                 SpawnSklep(card);
+            }            
+            else if(card.cardType == CardType.KOPERTY_ROLL)
+            {
+                SpawnRollKoperty(card);
             }
         }
 
@@ -167,6 +171,14 @@ public class BoardManager : MonoBehaviour
     private void SpawnChest(BoardCard card)
     {
         var spawnedChest = Instantiate(SpawnManager.Instance.goldChest, card.transform);
+        spawnedChest.transform.localPosition = Vector3.zero;
+        spawnedChest.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
+        card.boundedCollectible = spawnedChest;
+    }   
+    
+    private void SpawnRollKoperty(BoardCard card)
+    {
+        var spawnedChest = Instantiate(SpawnManager.Instance.kopertyroll, card.transform);
         spawnedChest.transform.localPosition = Vector3.zero;
         spawnedChest.transform.localEulerAngles = card.cardNameTransform.localEulerAngles;
         card.boundedCollectible = spawnedChest;

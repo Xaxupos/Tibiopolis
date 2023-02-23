@@ -13,6 +13,7 @@ public class SpawnManager : MonoBehaviour
     public Collectible imbu = new();
     public Collectible zapytania = new();
     public Collectible sklep = new();
+    public Collectible kopertyroll = new();
 
     public List<Collectible> firstLineEnemies = new();
     public List<Collectible> secondLineEnemies = new();

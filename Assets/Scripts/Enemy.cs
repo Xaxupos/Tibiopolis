@@ -42,5 +42,9 @@ public enum MonsterType
     EFREET,
     WOODLING,
     SCARAB,
-    SCARLETT
+    SCARLETT,
+    RAT,
+    SPECTRE,
+    MUMIA,
+    ANCIENT_SCARAB
 }

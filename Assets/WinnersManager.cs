@@ -32,9 +32,11 @@ public class WinnersManager : MonoBehaviour
             }
         }
 
-        winnnerIDS = winnnerIDS.OrderBy(x => x).Take(8).ToList();
+        winnnerIDS = winnnerIDS.OrderByDescending(id => PlayerPrefs.GetInt($"GetWinsByID{id}"))
+                                            .Take(8)
+                                            .ToList();
 
-        for(int w=0; w<winnnerIDS.Count; w++)
+        for (int w=0; w<winnnerIDS.Count; w++)
         {
             winners[w].nickText.text = PlayerPrefs.GetString($"GetNickByID{winnnerIDS[w]}");
             winners[w].wins = PlayerPrefs.GetInt($"GetWinsByID{winnnerIDS[w]}");
